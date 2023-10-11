@@ -889,12 +889,12 @@ HPDF_PopupAnnot_New (HPDF_MMgr         mmgr,
 }
 
 HPDF_Annotation
-HPDF_StampAnnot_New (HPDF_MMgr           mmgr,
-                     HPDF_Xref           xref,
-                     HPDF_Rect           rect,
-                     HPDF_StampAnnotName name,
-                     const char*         text,
-                     HPDF_Encoder        encoder)
+HPDF_StampAnnot_New (HPDF_MMgr             mmgr,
+                     HPDF_Xref             xref,
+                     HPDF_Rect             rect,
+                     HPDF_StampAnnotName   name,
+                     const char           *text,
+                     HPDF_Encoder          encoder)
 {
     HPDF_Annotation annot;
     HPDF_String s;
