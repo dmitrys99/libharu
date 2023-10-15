@@ -1732,65 +1732,65 @@ HPDF_Page_CreateURILinkAnnot  (HPDF_Page     page,
 
 
 HPDF_Annotation
-HPDF_Page_CreateTextMarkupAnnot (HPDF_Page      page,
+HPDF_Page_CreateTextMarkupAnnot  (HPDF_Page        page,
+                                  HPDF_Rect        rect,
+                                  const char      *text,
+                                  HPDF_Encoder     encoder,
+                                  HPDF_AnnotType   subType);
+
+HPDF_EXPORT(HPDF_Annotation)
+HPDF_Page_CreateHighlightAnnot  (HPDF_Page      page,
                                  HPDF_Rect      rect,
                                  const char    *text,
-                                 HPDF_Encoder   encoder,
-                                 HPDF_AnnotType subType);
+                                 HPDF_Encoder   encoder);
 
 HPDF_EXPORT(HPDF_Annotation)
-HPDF_Page_CreateHighlightAnnot  (HPDF_Page    page,
-                                 HPDF_Rect    rect,
-                                 const char  *text,
-                                 HPDF_Encoder encoder);
+HPDF_Page_CreateUnderlineAnnot  (HPDF_Page      page,
+                                 HPDF_Rect      rect,
+                                 const char    *text,
+                                 HPDF_Encoder   encoder);
 
 HPDF_EXPORT(HPDF_Annotation)
-HPDF_Page_CreateUnderlineAnnot (HPDF_Page    page,
-                                HPDF_Rect    rect,
-                                const char  *text,
-                                HPDF_Encoder encoder);
+HPDF_Page_CreateSquigglyAnnot  (HPDF_Page      page,
+                                HPDF_Rect      rect,
+                                const char    *text,
+                                HPDF_Encoder   encoder);
 
 HPDF_EXPORT(HPDF_Annotation)
-HPDF_Page_CreateSquigglyAnnot  (HPDF_Page    page,
-                                HPDF_Rect    rect,
-                                const char  *text,
-                                HPDF_Encoder encoder);
+HPDF_Page_CreateStrikeOutAnnot  (HPDF_Page      page,
+                                 HPDF_Rect      rect,
+                                 const char    *text,
+                                 HPDF_Encoder   encoder);
 
 HPDF_EXPORT(HPDF_Annotation)
-HPDF_Page_CreateStrikeOutAnnot  (HPDF_Page   page,
-                                 HPDF_Rect    rect,
-                                 const char  *text,
-                                 HPDF_Encoder encoder);
+HPDF_Page_CreatePopupAnnot  (HPDF_Page         page,
+                             HPDF_Rect         rect,
+                             HPDF_Annotation   parent);
 
 HPDF_EXPORT(HPDF_Annotation)
-HPDF_Page_CreatePopupAnnot  (HPDF_Page          page,
-                             HPDF_Rect          rect,
-                             HPDF_Annotation    parent);
+HPDF_Page_CreateStampAnnot  (HPDF_Page             page,
+                             HPDF_Rect             rect,
+                             HPDF_StampAnnotName   name,
+                             const char           *text,
+                             HPDF_Encoder          encoder);
 
 HPDF_EXPORT(HPDF_Annotation)
-HPDF_Page_CreateStampAnnot  (HPDF_Page           page,
-                             HPDF_Rect           rect,
-                             HPDF_StampAnnotName name,
-                             const char*         text,
-                             HPDF_Encoder        encoder);
+HPDF_Page_CreateProjectionAnnot  (HPDF_Page      page,
+                                  HPDF_Rect      rect,
+                                  const char    *text,
+                                  HPDF_Encoder   encoder);
 
 HPDF_EXPORT(HPDF_Annotation)
-HPDF_Page_CreateProjectionAnnot(HPDF_Page    page,
-                                HPDF_Rect    rect,
-                                const char  *text,
-                                HPDF_Encoder encoder);
+HPDF_Page_CreateSquareAnnot  (HPDF_Page      page,
+                              HPDF_Rect      rect,
+                              const char    *text,
+                              HPDF_Encoder   encoder);
 
 HPDF_EXPORT(HPDF_Annotation)
-HPDF_Page_CreateSquareAnnot (HPDF_Page          page,
-                             HPDF_Rect          rect,
-                             const char        *text,
-                             HPDF_Encoder       encoder);
-
-HPDF_EXPORT(HPDF_Annotation)
-HPDF_Page_CreateCircleAnnot (HPDF_Page          page,
-                             HPDF_Rect          rect,
-                             const char        *text,
-                             HPDF_Encoder       encoder);
+HPDF_Page_CreateCircleAnnot  (HPDF_Page      page,
+                              HPDF_Rect      rect,
+                              const char    *text,
+                              HPDF_Encoder   encoder);
 
 /**
 
@@ -2229,8 +2229,8 @@ HPDF_LoadJpegImageFromMem   (HPDF_Doc      pdf,
                             HPDF_UINT      size);
 
 HPDF_EXPORT(HPDF_Image)
-HPDF_LoadU3DFromFile (HPDF_Doc      pdf,
-                      const char   *filename);
+HPDF_LoadU3DFromFile (HPDF_Doc     pdf,
+                    const char    *filename);
 
 HPDF_EXPORT(HPDF_Image)
 HPDF_LoadU3DFromMem  (HPDF_Doc      pdf,
@@ -3456,6 +3456,11 @@ HPDF_Page_GetGStateDepth  (HPDF_Page   page);
 
   \copydoc dox_return_ok
 
+  \par Example
+
+  A miter limit of 1.414 converts miters to bevels for \c angle less than \c 90 degrees,
+  a limit of \c 2.0 converts them for \c angle less than 60 degrees, and a limit of 10.0
+  converts them for angle less than approximately 11.5 degrees.
 
   \copydoc dox_pdf_cmd
   \c w

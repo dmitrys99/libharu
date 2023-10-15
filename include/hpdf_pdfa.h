@@ -46,6 +46,8 @@ HPDF_PDFA_AddXmpExtension(HPDF_Doc    pdf,
 
 void
 HPDF_PDFA_ClearXmpExtensions(HPDF_Doc pdf);
+HPDF_PDFA_SetPDFAConformance (HPDF_Doc        pdf,
+                              HPDF_PDFAType   pdfatype);
 
 HPDF_STATUS
 HPDF_PDFA_GenerateID(HPDF_Doc);
