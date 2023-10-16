@@ -84,12 +84,12 @@ foreach(demo ${demos_with_grid_NAMES})
 endforeach()
 
 # the grid_sheet demo needs extra defines
-add_executable(grid_sheet grid_sheet.c)
+add_executable(grid_sheet grid_sheet.c utils.c)
 target_link_libraries(grid_sheet PUBLIC hpdf)
   if(UNIX AND NOT APPLE)
     target_link_libraries(grid_sheet PUBLIC m)
-  endif()
-set_target_properties(grid_sheet PROPERTIES COMPILE_FLAGS "${DEMO_C_FLAGS} -DSTAND_ALONE")
+  endif() 
+set_target_properties(grid_sheet PROPERTIES COMPILE_FLAGS "${DEMO_C_FLAGS} -DSTANDALONE")
 
 # =======================================================================
 # install demo source, demo executables and other files

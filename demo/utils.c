@@ -17,21 +17,20 @@
 #ifndef __UTILS_H
 #define __UTILS_H
 
-#if defined(__WIN32__) || defined(__WIN64__)
-#  define HPDF_snprintf _snprintf
-#  define FILE_SEPARATOR "\\"
-#else
-#  define HPDF_snprintf  snprintf
-#  define FILE_SEPARATOR "/"
-#endif // defined(__WIN32__) || defined(__WIN64__)
+#include "hpdf.h"
+#include "utils.h"
+#include <setjmp.h>
+#include <stdio.h>
+
+jmp_buf env;
 
 HPDF_HANDLER(void)
 demo_error_handler  (HPDF_STATUS   error_no,
                      HPDF_STATUS   detail_no,
-                     void         *user_data);
-
-
-// Same as ÓÔŐÖ×ŘŮ, but in ISO8859-2 codepage
-static const char iso8859_2_text[7] = "\xD3\xD4\xD5\xD6\xD7\xD8\xD9";
+                     void         *user_data)
+{
+    printf ("ERROR: error_no=0x%04X, detail_no=%u\n", (HPDF_UINT)error_no, (HPDF_UINT)detail_no);
+    longjmp(env, 1);
+}
 
 #endif /* __UTILS_H */
