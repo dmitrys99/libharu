@@ -102,6 +102,7 @@
 \example raw_image_demo.c
 \example slide_show_demo.c
 \example text_annotation.c
+\example text_demo2.c
 \example text_demo.c
   \par Text demo
 
