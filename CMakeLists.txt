@@ -85,9 +85,7 @@ endif(MSVC_VERSION GREATER 1399)
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS 1)
 
 # support all of the different variations of LIBPNG defines in HARU
-if (${PNG_FOUND})
-set (LIBHPDF_HAVE_LIBPNG TRUE)
-endif(${PNG_FOUND})
+set (LIBHPDF_HAVE_LIBPNG ${PNG_FOUND})
 
 # support different zlib defines
 set (LIBHPDF_HAVE_ZLIB ${ZLIB_FOUND})
