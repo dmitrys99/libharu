@@ -20,11 +20,19 @@
 #include "hpdf.h"
 #include <setjmp.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 HPDF_HANDLER(void)
 demo_error_handler  (HPDF_STATUS   error_no,
                      HPDF_STATUS   detail_no,
                      void         *user_data);
 
 static jmp_buf env;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __HANDLER_H */

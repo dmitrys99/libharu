@@ -21,6 +21,10 @@
 #include <setjmp.h>
 #include <stdio.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 jmp_buf env;
 
 HPDF_HANDLER(void)
@@ -31,5 +35,9 @@ demo_error_handler  (HPDF_STATUS   error_no,
     printf ("ERROR: error_no=0x%04X, detail_no=%u\n", (HPDF_UINT)error_no, (HPDF_UINT)detail_no);
     longjmp(env, 1);
 }
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __HANDLER_H */
