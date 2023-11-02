@@ -456,6 +456,41 @@ HPDF_Page_Concat  (HPDF_Page         page,
     return ret;
 }
 
+HPDF_EXPORT(HPDF_STATUS)
+HPDF_Page_Translate (HPDF_Page   page,
+                     HPDF_REAL   x,
+                     HPDF_REAL   y)
+{
+    HPDF_PTRACE ((" HPDF_Page_Translate\n"));
+    return HPDF_Page_Concat (page, 1, 0, 0, 1, x, y);
+}
+
+HPDF_EXPORT(HPDF_STATUS)
+HPDF_Page_Scale (HPDF_Page   page,
+                 HPDF_REAL   sx,
+                 HPDF_REAL   sy)
+{
+    HPDF_PTRACE ((" HPDF_Page_Scale\n"));
+    return HPDF_Page_Concat (page, sx, 0, 0, sy, 0, 0);
+}
+
+HPDF_EXPORT(HPDF_STATUS)
+HPDF_Page_Rotate (HPDF_Page   page,
+                  HPDF_REAL   a)
+{
+    HPDF_PTRACE ((" HPDF_Page_Rotate\n"));
+    return HPDF_Page_Concat (page, cos(a), sin(a), -sin(a), cos(a), 0, 0);
+}
+
+HPDF_EXPORT(HPDF_STATUS)
+HPDF_Page_Skew (HPDF_Page   page,
+                HPDF_REAL   a,
+                HPDF_REAL   b)
+{
+    HPDF_PTRACE ((" HPDF_Page_Skew\n"));
+    return HPDF_Page_Concat (page, 1, tan(a), tan(b), 1, 0, 0);
+}
+
 /*--- Path construction operator ------------------------------------------*/
 
 /* m */

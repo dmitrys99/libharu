@@ -3699,7 +3699,7 @@ HPDF_Page_GRestore  (HPDF_Page    page);
   Application can call HPDF_Page_GSave() when graphics mode is \ref HPDF_GMODE_PAGE_DESCRIPTION.
 
   \copydoc dox_param_page
-  \param a, b, c, d, x, y - Transformation matrix to concatenate.
+  \param a, b, c, d, x, y Transformation matrix to concatenate.
 
   \copydoc dox_return_ok
 
@@ -3716,6 +3716,105 @@ HPDF_Page_Concat  (HPDF_Page    page,
                    HPDF_REAL    x,
                    HPDF_REAL    y);
 
+/**
+
+  \ingroup graphics
+  \brief Concatenate the page's transformation matrix with translation matrix.
+
+  Coordinate system is translated by \c x and \c y coordinate units.
+
+  \copydoc dox_param_page
+  \param x, y Coordinate system translate distance.
+
+  \copydoc dox_return_ok
+
+  \copydoc dox_pdf_cmd
+  \c cm
+
+  \see HPDF_Page_Concat()
+
+  \note Corresponds to `HPDF_Page_Concat (page, 1, 0, 0, 1, x, y);`
+*/
+HPDF_EXPORT(HPDF_STATUS)
+HPDF_Page_Translate (HPDF_Page    page,
+                     HPDF_REAL    x,
+                     HPDF_REAL    y);
+
+/**
+
+  \ingroup graphics
+  \brief Concatenate the page's transformation matrix with scale matrix.
+
+  Coordinate system is scaled so 1 unit horizontal dimension is same as
+  \c sx units and 1 unit in vertical dimension is same as \c sy units
+  in new coordinate system..
+
+  \copydoc dox_param_page
+  \param sx, sy Coordinate system scale values.
+
+  \copydoc dox_return_ok
+
+  \copydoc dox_pdf_cmd
+  \c cm
+
+  \see HPDF_Page_Concat()
+
+  \note Corresponds to `HPDF_Page_Concat (page, sx, 0, 0, sy, 0, 0);`
+
+*/
+HPDF_EXPORT(HPDF_STATUS)
+HPDF_Page_Scale (HPDF_Page    page,
+                 HPDF_REAL    sx,
+                 HPDF_REAL    sy);
+
+/**
+
+  \ingroup graphics
+  \brief Concatenate the page's transformation matrix with rotate matrix.
+
+  Coordinate system axes are rotated by angle \c a counter clocwise.
+
+  \copydoc dox_param_page
+  \param a Coordinate system rotate angle (radians).
+
+  \copydoc dox_return_ok
+
+  \copydoc dox_pdf_cmd
+  \c cm
+
+  \see HPDF_Page_Concat()
+
+  \note Corresponds to `HPDF_Page_Concat (page, cos(q), sin(q), -sin(q), cos(q), 0, 0);`
+
+*/
+HPDF_EXPORT(HPDF_STATUS)
+HPDF_Page_Rotate (HPDF_Page    page,
+                  HPDF_REAL    a);
+
+/**
+
+  \ingroup graphics
+  \brief Concatenate the page's transformation matrix with skew matrix.
+
+  Coordinate system is skewed by an angle \c a at \a x axis and by angle \c b at \a y axis.
+
+  \copydoc dox_param_page
+  \param a, b Coordinate system skew values.
+
+  \copydoc dox_return_ok
+
+  \copydoc dox_pdf_cmd
+  \c cm
+
+  \see HPDF_Page_Concat()
+
+  \note Corresponds to `HPDF_Page_Concat (page, 1, tan(a), tan(b), 1, 0, 0);`
+
+*/
+HPDF_EXPORT(HPDF_STATUS)
+HPDF_Page_Skew (HPDF_Page    page,
+                HPDF_REAL    a,
+                HPDF_REAL    b);
 /*--- Path construction operator ------------------------------------------*/
 
 /**
