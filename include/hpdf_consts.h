@@ -546,7 +546,7 @@
 
 /*----------------------------------------------------------------------------*/
 /**
-  \brief Predefined value for calculations with millimeters
+  \brief Predefined value for calculations with millimeters. Equals to 72.0/25.4 (72 points pre inch per mm).
 */
 #define HPDF_MM                             2.834646
 
