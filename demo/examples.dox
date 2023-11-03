@@ -71,6 +71,15 @@
   - Text skewing
   - Character spacing
   - Word spacing
+\example transforms.c
+  \par Transformation helper functions
+
+  This program show usage of helper functions for coordinate system transformations.
+  It creates transformation matrices for translate, scale, rotate and skew.
+  For this purpose it uses HPDF_Page_Translate(), HPDF_Page_Scale(), HPDF_Page_Rotate()
+  and HPDF_Page_Skew() respectively.
+
+  Internally all these functions use HPDF_Page_Concat() for transformation matrix manipulation.
 \example ttfont_demo.c
 \example ttfont_demo_jp.c
 \example utf8.c

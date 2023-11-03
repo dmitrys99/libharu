@@ -30,6 +30,7 @@ set(
     png_demo
     slide_show_demo
     text_annotation
+    transforms
     ttfont_demo
     ttfont_demo_jp
     utf8

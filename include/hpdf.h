@@ -3706,6 +3706,8 @@ HPDF_Page_GRestore  (HPDF_Page    page);
   \copydoc dox_pdf_cmd
   \c cm
 
+  \see HPDF_Page_Translate(), HPDF_Page_Scale(), HPDF_Page_Rotate(), HPDF_Page_Skew()
+
 */
 HPDF_EXPORT(HPDF_STATUS)
 HPDF_Page_Concat  (HPDF_Page    page,
