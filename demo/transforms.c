@@ -39,7 +39,8 @@ const char *captions[] = {
     "Translate",
     "Scale",
     "Rotate",
-    "Skew"
+    "Skew",
+    "Combined"
 };
 
 /* Draw original rectangle */
@@ -107,15 +108,17 @@ main (int argc, char **argv)
     /* calculate rectangles positions */
     HPDF_REAL page_height = HPDF_Page_GetHeight (page);
 
-    HPDF_REAL x[] = { 20*HPDF_MM,
-                     100*HPDF_MM,
-                      20*HPDF_MM,
-                     100*HPDF_MM};
+    HPDF_REAL x[] = {20*HPDF_MM,
+                     90*HPDF_MM,
+                     20*HPDF_MM,
+                     90*HPDF_MM,
+                    160*HPDF_MM};
 
-    HPDF_REAL y[] = {page_height - rect_height -  20*HPDF_MM,
-                     page_height - rect_height -  20*HPDF_MM,
-                     page_height - rect_height - 100*HPDF_MM,
-                     page_height - rect_height - 100*HPDF_MM};
+    HPDF_REAL y[] = {page_height - rect_height - 20*HPDF_MM,
+                     page_height - rect_height - 20*HPDF_MM,
+                     page_height - rect_height - 90*HPDF_MM,
+                     page_height - rect_height - 90*HPDF_MM,
+                     page_height - rect_height - 90*HPDF_MM};
 
     /* translate transformation */
     HPDF_Page_GSave (page);
@@ -183,6 +186,26 @@ main (int argc, char **argv)
     HPDF_Page_GRestore (page);
 
     draw_caption (page, 3);
+
+    HPDF_Page_GRestore (page);
+
+    /* combined transformation */
+    HPDF_Page_GSave (page);
+
+    HPDF_Page_Translate (page, x[4], y[4]);
+
+    HPDF_Page_GSave (page);
+    draw_rect (page);
+
+    HPDF_Page_Skew (page, PI/20, PI/20);
+    HPDF_Page_Scale (page, 0.8, 1.2);
+    HPDF_Page_Rotate (page, PI/20);
+    HPDF_Page_Translate (page, 5*HPDF_MM, 5*HPDF_MM);
+
+    draw_transformed (page);
+    HPDF_Page_GRestore (page);
+
+    draw_caption (page, 4);
 
     HPDF_Page_GRestore (page);
 
