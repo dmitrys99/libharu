@@ -70,11 +70,11 @@ main (int argc, char **argv)
 
     HPDF_Page_BeginText(page);
 
-    HPDF_Page_MoveTextPos(page, 100, 100);
+    HPDF_Page_MoveTextPos(page, 100, HPDF_Page_GetHeight (page) - 100);
     HPDF_Page_ShowText(page, "Привет, мир!");
-    HPDF_Page_MoveTextPos(page, 0, 100);
+    HPDF_Page_MoveTextPos(page, 0, -100);
     HPDF_Page_ShowText(page, "Peña, ¿cómo va, mundo?");
-    HPDF_Page_MoveTextPos(page, 0, 100);
+    HPDF_Page_MoveTextPos(page, 0, -100);
     HPDF_Page_ShowText(page, "你好，世界！");
 
     HPDF_Page_EndText(page);
