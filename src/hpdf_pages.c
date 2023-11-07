@@ -26,53 +26,25 @@
 
 /*----------------------------------------------------------------------------*/
 
-typedef struct _HPDF_PageSizeValue {
-    HPDF_REAL   x;
-    HPDF_REAL   y;
-} HPDF_PageSizeValue;
-
-static const HPDF_PageSizeValue HPDF_PREDEFINED_PAGE_SIZES[] = {
-    {612, 792},     /* HPDF_PAGE_SIZE_LETTER */
-    {612, 1008},    /* HPDF_PAGE_SIZE_LEGAL */
-    {(HPDF_REAL)841.89, (HPDF_REAL)1190.551},    /* HPDF_PAGE_SIZE_A3 */
-    {(HPDF_REAL)595.276, (HPDF_REAL)841.89},     /* HPDF_PAGE_SIZE_A4 */
-    {(HPDF_REAL)419.528, (HPDF_REAL)595.276},     /* HPDF_PAGE_SIZE_A5 */
-    {(HPDF_REAL)708.661, (HPDF_REAL)1000.63},     /* HPDF_PAGE_SIZE_B4 */
-    {(HPDF_REAL)498.898, (HPDF_REAL)708.661},     /* HPDF_PAGE_SIZE_B5 */
-    {522, 756},     /* HPDF_PAGE_SIZE_EXECUTIVE */
-    {288, 432},     /* HPDF_PAGE_SIZE_US4x6 */
-    {288, 576},     /* HPDF_PAGE_SIZE_US4x8 */
-    {360, 504},     /* HPDF_PAGE_SIZE_US5x7 */
-    {297, 684}      /* HPDF_PAGE_SIZE_COMM10 */
-};
-
-
 static const HPDF_RGBColor DEF_RGB_COLOR = {0, 0, 0};
 
 static const HPDF_CMYKColor DEF_CMYK_COLOR = {0, 0, 0, 0};
 
-
 static HPDF_STATUS
 Pages_BeforeWrite  (HPDF_Dict    obj);
-
 
 static HPDF_STATUS
 Page_BeforeWrite  (HPDF_Dict    obj);
 
-
 static void
 Page_OnFree  (HPDF_Dict  obj);
-
 
 static HPDF_STATUS
 AddResource  (HPDF_Page  page);
 
-
 static HPDF_STATUS
 AddAnnotation  (HPDF_Page        page,
                 HPDF_Annotation  annot);
-
-
 
 static HPDF_UINT
 GetPageCount  (HPDF_Dict    pages);

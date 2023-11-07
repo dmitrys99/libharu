@@ -26,6 +26,6 @@
 #endif // defined(__WIN32__) || defined(__WIN64__)
 
 // Same as ÓÔŐÖ×ŘŮ, but in ISO8859-2 codepage
-static const char iso8859_2_text[7] = {0xD3, 0xD4, 0xD5, 0xD6, 0xD7, 0xD8, 0xD9};
+static const char iso8859_2_text[7] = "\xD3\xD4\xD5\xD6\xD7\xD8\xD9";
 
 #endif /* __UTILS_H */

@@ -43,7 +43,7 @@ if (CMAKE_COMPILER_IS_GNUCC OR ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang"))
    endif (LIBHPDF_ENABLE_EXCEPTIONS)
 endif ()
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -pedantic")
 
 set(HPDF_INCLUDE_DIR "${CMAKE_CURRENT_LIST_DIR}/include" CACHE INTERNAL "")
 include_directories(${PROJECT_SOURCE_DIR}/include)
@@ -54,8 +54,6 @@ if (${LIBHPDF_SHARED_LIB})
 else()
   set(LIB_TYPE STATIC)
 endif()
-
-message(${LIB_TYPE})
 
 # =======================================================================
 # look for headers and libraries
@@ -141,6 +139,7 @@ set(
     include/hpdf_objects.h
     include/hpdf_outline.h
     include/hpdf_pages.h
+    include/hpdf_page_sizes.h
     include/hpdf_page_label.h
     include/hpdf_streams.h
     include/hpdf_u3d.h

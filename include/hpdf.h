@@ -93,6 +93,7 @@ typedef HPDF_HANDLE   HPDF_Shading;
 #include "hpdf_doc.h"
 #include "hpdf_error.h"
 #include "hpdf_pdfa.h"
+#include "hpdf_page_sizes.h"
 
 #endif /* HPDF_SHARED */
 

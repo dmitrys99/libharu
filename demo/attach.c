@@ -59,7 +59,7 @@ main (int argc, char **argv)
     /* add a new page object. */
     page = HPDF_AddPage (pdf);
 
-    HPDF_Page_SetSize (page, HPDF_PAGE_SIZE_LETTER, HPDF_PAGE_PORTRAIT);
+    HPDF_Page_SetSize (page, HPDF_PAGE_SIZE_US_LETTER, HPDF_PAGE_PORTRAIT);
 
     HPDF_Page_BeginText (page);
     HPDF_Page_SetFontAndSize (page, font, 20);
