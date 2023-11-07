@@ -20,6 +20,7 @@
 
 #include "hpdf_config.h"
 #include "hpdf_types.h"
+#include "hpdf_page_sizes.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -113,6 +114,12 @@ HPDF_ToRect  (HPDF_REAL  left,
 void
 HPDF_UInt16Swap  (HPDF_UINT16  *value);
 
+/**
+  \ingroup page
+  \brief Return name of predefined page size
+*/
+const char*
+HPDF_PageSizeName (HPDF_PageSizes size);
 
 #ifdef __cplusplus
 }
