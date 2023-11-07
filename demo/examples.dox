@@ -14,6 +14,14 @@
   One can see attachment in Adobe Reader or in Firefox browser.
 \example character_map.c
 \example chfont_demo.c
+\example clip_hatch.c
+  \par Clipping path demo program
+
+  This program create hatch pattern using lines, page transform (rotation) and clipping path.
+
+  Clipping path is created using HPDF_Page_Rectangle() function. In order to make clipping work
+  properly, HPDF_Page_EndPath() function \a must be called right after HPDF_Page_Clip().
+
 \example clip_hatch2.c
   \par Clipping path demo program
 
@@ -23,14 +31,6 @@
   properly, HPDF_Page_EndPath() function \a must be called right after HPDF_Page_Eoclip().
 
   In this example clipping path is complex, constructed as intersections of two rectangles.
-\example clip_hatch.c
-  \par Clipping path demo program
-
-  This program create hatch pattern using lines, page transform (rotation) and clipping path.
-
-  Clipping path is created using HPDF_Page_Rectangle() function. In order to make clipping work
-  properly, HPDF_Page_EndPath() function \a must be called right after HPDF_Page_Clip().
-
 \example encoding_list.c
 \example encryption.c
 \example ext_gstate_demo.c
@@ -54,12 +54,17 @@
   Last action is to clean up everything.
 \example outline_demo.c
 \example outline_demo_jp.c
+\example page_sizes_demo.c
+
+  \par All available page sizes demo.
+
+  This demo creates PDF file, feed it with pages of all sizes from \ref HPDF_PageSizes enumeration.
+  For every page outline is created with the name of a page size from \ref HPDF_PageSizeName.
 \example permission.c
 \example png_demo.c
 \example raw_image_demo.c
 \example slide_show_demo.c
 \example text_annotation.c
-\example text_demo2.c
 \example text_demo.c
   \par Text demo
 
@@ -71,6 +76,7 @@
   - Text skewing
   - Character spacing
   - Word spacing
+\example text_demo2.c
 \example transforms.c
   \par Transformation helper functions
 
