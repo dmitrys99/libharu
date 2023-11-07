@@ -29,7 +29,10 @@ extern "C" {
 #endif
 
 /**
+<<<<<<< HEAD
   \ingroup page
+=======
+>>>>>>> 8fd8e32 (Add predefined page size formats)
   \brief Data structure representing page size (width and height), in points.
 */
 typedef struct _HPDF_PageSizeValue {
@@ -81,7 +84,10 @@ typedef enum _HPDF_PageSizes {
 } HPDF_PageSizes;
 
 /**
+<<<<<<< HEAD
   \ingroup page
+=======
+>>>>>>> 8fd8e32 (Add predefined page size formats)
   \brief Predefined page sizes (in points).
 */
 static const HPDF_PageSizeValue HPDF_PREDEFINED_PAGE_SIZES[] = {
@@ -94,7 +100,10 @@ static const HPDF_PageSizeValue HPDF_PREDEFINED_PAGE_SIZES[] = {
 };
 
 /**
+<<<<<<< HEAD
   \ingroup page
+=======
+>>>>>>> 8fd8e32 (Add predefined page size formats)
   \brief Predefined page size names.
 */
 static const char * const HPDF_PREDEFINED_PAGE_SIZE_NAMES[] = {

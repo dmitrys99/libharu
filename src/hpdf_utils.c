@@ -458,6 +458,7 @@ HPDF_PageSizeName (HPDF_PageSizes size)
 {
     return HPDF_PREDEFINED_PAGE_SIZE_NAMES[size];
 }
+<<<<<<< HEAD
 
 
 HPDF_TransMatrix
@@ -523,3 +524,5 @@ HPDF_Matrix_Skew (HPDF_TransMatrix m, HPDF_REAL a, HPDF_REAL b)
     HPDF_TransMatrix skew = {1, tan(a), tan(b), 1, 0, 0};
     return HPDF_Matrix_Multiply (m, skew);
 }
+=======
+>>>>>>> 8fd8e32 (Add predefined page size formats)
