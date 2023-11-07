@@ -26,6 +26,7 @@ set(
     minimal
     outline_demo
     #outline_demo_jp
+    page_sizes_demo
     permission
     png_demo
     slide_show_demo
