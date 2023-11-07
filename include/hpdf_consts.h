@@ -124,18 +124,18 @@
 #define HPDF_LIMIT_MAX_CID             65535
 #define HPDF_MAX_GENERATION_NUM        65535
 
-#define HPDF_MIN_PAGE_HEIGHT           3
-#define HPDF_MIN_PAGE_WIDTH            3
-#define HPDF_MAX_PAGE_HEIGHT           14400
-#define HPDF_MAX_PAGE_WIDTH            14400
-#define HPDF_MIN_MAGNIFICATION_FACTOR  8
-#define HPDF_MAX_MAGNIFICATION_FACTOR  3200
+#define HPDF_MIN_MAGNIFICATION_FACTOR   0.08 // 8 percent
+#define HPDF_MAX_MAGNIFICATION_FACTOR  64.00 // 6400 percent
 
 /*---------------------------------------------------------------------------*/
 /*------ limitation of various properties -----------------------------------*/
 
-#define HPDF_MIN_PAGE_SIZE          3
-#define HPDF_MAX_PAGE_SIZE          14400
+/// Minimal page size in user units according to PDF standard
+#define HPDF_MIN_PAGE_MEASURE       3
+
+/// Maximal page size in user units according to PDF standard
+#define HPDF_MAX_PAGE_MEASURE       14400
+
 #define HPDF_MIN_HORIZONTALSCALING  10
 #define HPDF_MAX_HORIZONTALSCALING  300
 #define HPDF_MIN_WORDSPACE          -30

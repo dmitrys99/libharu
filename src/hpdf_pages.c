@@ -1588,7 +1588,7 @@ HPDF_Page_SetZoom  (HPDF_Page   page,
         return HPDF_INVALID_PAGE;
     }
 
-    if (zoom < 0.08 || zoom > 32) {
+    if (zoom < HPDF_MIN_MAGNIFICATION_FACTOR || zoom > HPDF_MAX_MAGNIFICATION_FACTOR) {
         return HPDF_RaiseError (page->error, HPDF_INVALID_PARAMETER, 0);
     }
 
@@ -1602,8 +1602,8 @@ HPDF_Page_SetWidth  (HPDF_Page    page,
 {
     HPDF_PTRACE((" HPDF_Page_SetWidth\n"));
 
-    if (value < 3 || value > 14400)
-        return HPDF_RaiseError (page->error, HPDF_PAGE_INVALID_SIZE, 0);
+    if (value < HPDF_MIN_PAGE_MEASURE || value > HPDF_MAX_PAGE_MEASURE)
+        return HPDF_RaiseError (page->error, HPDF_PAGE_INVALID_SIZE, value);
 
     if (HPDF_Page_SetBoxValue (page, "MediaBox", 2, value) != HPDF_OK)
         return HPDF_CheckError (page->error);
@@ -1618,8 +1618,8 @@ HPDF_Page_SetHeight  (HPDF_Page    page,
 {
     HPDF_PTRACE((" HPDF_Page_SetWidth\n"));
 
-    if (value < 3 || value > 14400)
-        return HPDF_RaiseError (page->error, HPDF_PAGE_INVALID_SIZE, 0);
+    if (value < HPDF_MIN_PAGE_MEASURE || value > HPDF_MAX_PAGE_MEASURE)
+        return HPDF_RaiseError (page->error, HPDF_PAGE_INVALID_SIZE, value);
 
     if (HPDF_Page_SetBoxValue (page, "MediaBox", 3, value) != HPDF_OK)
         return HPDF_CheckError (page->error);
@@ -1641,8 +1641,7 @@ HPDF_Page_SetSize  (HPDF_Page             page,
         return HPDF_INVALID_PAGE;
 
     if (size < 0 || size > HPDF_PAGE_SIZE_EOF)
-        return HPDF_RaiseError (page->error, HPDF_PAGE_INVALID_SIZE,
-                (HPDF_STATUS)direction);
+        return HPDF_RaiseError (page->error, HPDF_PAGE_INVALID_SIZE, (HPDF_STATUS)size);
 
     if (direction == HPDF_PAGE_LANDSCAPE) {
         ret += HPDF_Page_SetHeight (page,
