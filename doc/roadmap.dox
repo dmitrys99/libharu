@@ -21,7 +21,7 @@ Best libraries have excellent documentation.
 This library can be best in the class.
 
 Several features should be added:
-- More paper formats <a href="https://github.com/dmitrys99/libharu/pull/2">PR #2</a>
+- ~~More paper formats~~ Done <a href="https://github.com/dmitrys99/libharu/pull/2">PR #2</a>
 - RTL writing
 - More image format support
 - Bar codes support
