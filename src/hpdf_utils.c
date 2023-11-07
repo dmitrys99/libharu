@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include "hpdf_utils.h"
 #include "hpdf_consts.h"
+#include "hpdf_page_sizes.h"
 
 /*---------------------------------------------------------------------------*/
 
@@ -451,3 +452,8 @@ HPDF_UInt16Swap  (HPDF_UINT16  *value)
     *value = (HPDF_UINT16)((HPDF_UINT16)u[0] << 8 | (HPDF_UINT16)u[1]);
 }
 
+const char*
+HPDF_PageSizeName (HPDF_PageSizes size)
+{
+    return HPDF_PREDEFINED_PAGE_SIZE_NAMES[size];
+}

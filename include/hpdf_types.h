@@ -567,28 +567,15 @@ typedef enum _HPDF_TransitionStyle {
 
 /*----------------------------------------------------------------------------*/
 
-typedef enum _HPDF_PageSizes {
-    HPDF_PAGE_SIZE_LETTER = 0,
-    HPDF_PAGE_SIZE_LEGAL,
-    HPDF_PAGE_SIZE_A3,
-    HPDF_PAGE_SIZE_A4,
-    HPDF_PAGE_SIZE_A5,
-    HPDF_PAGE_SIZE_B4,
-    HPDF_PAGE_SIZE_B5,
-    HPDF_PAGE_SIZE_EXECUTIVE,
-    HPDF_PAGE_SIZE_US4x6,
-    HPDF_PAGE_SIZE_US4x8,
-    HPDF_PAGE_SIZE_US5x7,
-    HPDF_PAGE_SIZE_COMM10,
-    HPDF_PAGE_SIZE_EOF
-} HPDF_PageSizes;
-
-
+/**
+  \brief Page orientation
+*/
 typedef enum _HPDF_PageDirection {
+    /// Portrait orientation (longest size vertical)
     HPDF_PAGE_PORTRAIT = 0,
+    /// Landscape orientation (longest size horizontal)
     HPDF_PAGE_LANDSCAPE
 } HPDF_PageDirection;
-
 
 typedef enum  _HPDF_EncoderType {
     /// Single-byte character encoder
