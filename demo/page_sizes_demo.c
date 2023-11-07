@@ -1,5 +1,5 @@
 /*
- * << Haru Free PDF Library 2.0.0 >> -- encoding_list.c
+ * << Haru Free PDF Library 2.0.0 >> -- page_sizes_demo.c
  *
  * Copyright (c) 1999-2006 Takeshi Kanno <takeshi_kanno@est.hi-ho.ne.jp>
  * Copyright (c) 2023 Dmitry Solomennikov
