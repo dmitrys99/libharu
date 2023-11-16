@@ -32,6 +32,7 @@ set(
     pattern2
     pdf_a_conformance
     page_sizes_demo
+    pattern
     permission
     png_demo
     slide_show_demo
