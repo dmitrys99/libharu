@@ -458,11 +458,11 @@ HPDF_Page_Concat  (HPDF_Page         page,
 
 HPDF_EXPORT(HPDF_STATUS)
 HPDF_Page_Translate (HPDF_Page   page,
-                     HPDF_REAL   x,
-                     HPDF_REAL   y)
+                     HPDF_REAL   dx,
+                     HPDF_REAL   dy)
 {
     HPDF_PTRACE ((" HPDF_Page_Translate\n"));
-    return HPDF_Page_Concat (page, 1, 0, 0, 1, x, y);
+    return HPDF_Page_Concat (page, 1, 0, 0, 1, dx, dy);
 }
 
 HPDF_EXPORT(HPDF_STATUS)
@@ -479,6 +479,15 @@ HPDF_Page_Rotate (HPDF_Page   page,
                   HPDF_REAL   a)
 {
     HPDF_PTRACE ((" HPDF_Page_Rotate\n"));
+    return HPDF_Page_Concat (page, cos(a), sin(a), -sin(a), cos(a), 0, 0);
+}
+
+HPDF_EXPORT(HPDF_STATUS)
+HPDF_Page_RotateDeg (HPDF_Page   page,
+                     HPDF_REAL   degrees)
+{
+    HPDF_PTRACE ((" HPDF_Page_RotateDeg\n"));
+    HPDF_REAL a = degrees * HPDF_PI / 180.0;
     return HPDF_Page_Concat (page, cos(a), sin(a), -sin(a), cos(a), 0, 0);
 }
 

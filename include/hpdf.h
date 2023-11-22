@@ -3724,10 +3724,10 @@ HPDF_Page_Concat  (HPDF_Page    page,
   \ingroup graphics
   \brief Concatenate the page's transformation matrix with translation matrix.
 
-  Coordinate system is translated by \c x and \c y coordinate units.
+  Coordinate system is translated by \c dx and \c dy coordinate units.
 
   \copydoc dox_param_page
-  \param x, y Coordinate system translate distance.
+  \param dx, dy Coordinate system translate distance.
 
   \copydoc dox_return_ok
 
@@ -3736,12 +3736,12 @@ HPDF_Page_Concat  (HPDF_Page    page,
 
   \see HPDF_Page_Concat()
 
-  \note Corresponds to `HPDF_Page_Concat (page, 1, 0, 0, 1, x, y);`
+  \note Corresponds to `HPDF_Page_Concat (page, 1, 0, 0, 1, dx, dy);`
 */
 HPDF_EXPORT(HPDF_STATUS)
 HPDF_Page_Translate (HPDF_Page    page,
-                     HPDF_REAL    x,
-                     HPDF_REAL    y);
+                     HPDF_REAL    dx,
+                     HPDF_REAL    dy);
 
 /**
 
@@ -3775,6 +3775,27 @@ HPDF_Page_Scale (HPDF_Page    page,
   \ingroup graphics
   \brief Concatenate the page's transformation matrix with rotate matrix.
 
+  Coordinate system axes are rotated by angle \c a counter clocwise (degrees).
+
+  \copydoc dox_param_page
+  \param degrees Coordinate system rotate angle (degrees).
+
+  \copydoc dox_return_ok
+
+  \copydoc dox_pdf_cmd
+  \c cm
+
+  \see HPDF_Page_Concat(), HPDF_Page_Rotate()
+
+*/
+HPDF_EXPORT(HPDF_STATUS)
+HPDF_Page_RotateDeg (HPDF_Page    page,
+                     HPDF_REAL    degrees);
+/**
+
+  \ingroup graphics
+  \brief Concatenate the page's transformation matrix with rotate matrix.
+
   Coordinate system axes are rotated by angle \c a counter clocwise.
 
   \copydoc dox_param_page
@@ -3785,7 +3806,7 @@ HPDF_Page_Scale (HPDF_Page    page,
   \copydoc dox_pdf_cmd
   \c cm
 
-  \see HPDF_Page_Concat()
+  \see HPDF_Page_Concat(), HPDF_Page_RotateDeg()
 
   \note Corresponds to `HPDF_Page_Concat (page, cos(q), sin(q), -sin(q), cos(q), 0, 0);`
 
