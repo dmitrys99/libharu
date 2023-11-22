@@ -61,7 +61,7 @@ hatch (HPDF_Doc    pdf,
     HPDF_Page_SetRGBStrokeHex (page, 0x55, 0x77, 0x22);
     HPDF_Page_SetLineWidth (page, 0.25 * HPDF_MM);
     HPDF_REAL angle1 = -45;
-    HPDF_REAL rad1 = angle1 / 180 * 3.141592;
+    HPDF_REAL rad1 = angle1 / 180 * HPDF_PI;
 
     /* rotate hatch */
     HPDF_Page_Concat (page, cos(rad1), sin(rad1), -sin(rad1), cos(rad1), -15*HPDF_MM, 0);

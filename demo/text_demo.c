@@ -300,7 +300,7 @@ int main (int argc, char **argv)
      * Rotating text
      */
     angle1 = 30;                   /* A rotation of 30 degrees. */
-    rad1 = angle1 / 180 * 3.141592; /* Calculate the radian value. */
+    rad1 = angle1 / 180 * HPDF_PI; /* Calculate the radian value. */
 
     show_description (page, 320, ypos - 60, "Rotating text");
     HPDF_Page_BeginText (page);
@@ -318,8 +318,8 @@ int main (int argc, char **argv)
 
     angle1 = 10;
     angle2 = 20;
-    rad1 = angle1 / 180 * 3.141592;
-    rad2 = angle2 / 180 * 3.141592;
+    rad1 = angle1 / 180 * HPDF_PI;
+    rad2 = angle2 / 180 * HPDF_PI;
 
     HPDF_Page_SetTextMatrix (page, 1, tan(rad1), tan(rad2), 1, 320, ypos - 120);
     HPDF_Page_ShowText (page, "ABCabc123");

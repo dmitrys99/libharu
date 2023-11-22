@@ -176,8 +176,8 @@ int main (int argc, char **argv)
     /* Skewing image. */
     angle1 = 10;
     angle2 = 20;
-    rad1 = angle1 / 180 * 3.141592;
-    rad2 = angle2 / 180 * 3.141592;
+    rad1 = angle1 / 180 * HPDF_PI;
+    rad2 = angle2 / 180 * HPDF_PI;
 
     HPDF_Page_GSave (page);
 
@@ -192,7 +192,7 @@ int main (int argc, char **argv)
 
     /* Rotating image */
     angle = 30;     /* rotation of 30 degrees. */
-    rad = angle / 180 * 3.141592; /* Calculate the radian value. */
+    rad = angle / 180 * HPDF_PI; /* Calculate the radian value. */
 
     HPDF_Page_GSave (page);
 

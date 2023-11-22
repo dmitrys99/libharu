@@ -163,8 +163,8 @@ main (int argc, char **argv)
 
     angle1 = 5;
     angle2 = 10;
-    rad1 = angle1 / 180 * 3.141592;
-    rad2 = angle2 / 180 * 3.141592;
+    rad1 = angle1 / 180 * HPDF_PI;
+    rad2 = angle2 / 180 * HPDF_PI;
 
     HPDF_Page_Concat (page, 1, tan(rad1), tan(rad2), 1, 25, 350);
     rect.left = 0;
@@ -194,7 +194,7 @@ main (int argc, char **argv)
     HPDF_Page_GSave (page);
 
     angle1 = 5;
-    rad1 = angle1 / 180 * 3.141592;
+    rad1 = angle1 / 180 * HPDF_PI;
 
     HPDF_Page_Concat (page, cos(rad1), sin(rad1), -sin(rad1), cos(rad1), 220, 350);
     rect.left = 0;
@@ -238,8 +238,8 @@ main (int argc, char **argv)
         float x;
         float y;
 
-        rad1 = (angle2 - 90) / 180 * 3.141592;
-        rad2 = angle2 / 180 * 3.141592;
+        rad1 = (angle2 - 90) / 180 * HPDF_PI;
+        rad2 = angle2 / 180 * HPDF_PI;
 
         x = 210 + cos(rad2) * 122;
         y = 190 + sin(rad2) * 122;

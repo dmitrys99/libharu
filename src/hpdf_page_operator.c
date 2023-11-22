@@ -2306,8 +2306,6 @@ InternalArc  (HPDF_Page    page,
               HPDF_REAL    ang2,
               HPDF_BOOL    cont_flg)
 {
-    const HPDF_REAL PIE = 3.14159F;
-
     char buf[HPDF_TMP_BUF_SIZ];
     char *pbuf = buf;
     char *eptr = buf + HPDF_TMP_BUF_SIZ - 1;
@@ -2325,8 +2323,8 @@ InternalArc  (HPDF_Page    page,
 
     HPDF_MemSet (buf, 0, HPDF_TMP_BUF_SIZ);
 
-    delta_angle = (90 - (HPDF_DOUBLE)(ang1 + ang2) / 2) / 180 * PIE;
-    new_angle = (HPDF_DOUBLE)(ang2 - ang1) / 2 / 180 * PIE;
+    delta_angle = (90 - (HPDF_DOUBLE)(ang1 + ang2) / 2) / 180 * HPDF_PI;
+    new_angle = (HPDF_DOUBLE)(ang2 - ang1) / 2 / 180 * HPDF_PI;
 
     rx0 = ray * HPDF_COS (new_angle);
     ry0 = ray * HPDF_SIN (new_angle);

@@ -20,11 +20,6 @@
 
 #include <string.h>
 
-#ifndef M_PI
-/* Not defined in MSVC6 */
-#define M_PI       3.14159265358979323846
-#endif
-
 HPDF_U3D
 HPDF_U3D_LoadU3D  (HPDF_MMgr        mmgr,
 				   HPDF_Stream      u3d_data,
@@ -714,8 +709,8 @@ HPDF_EXPORT(HPDF_STATUS) HPDF_3DView_SetCamera(HPDF_Dict view, HPDF_REAL coox, H
 		HPDF_REAL upxprime, upyprime, upzprime;
 		HPDF_REAL sinroll, cosroll;
 
-		sinroll =  (HPDF_REAL)sin((roll/180.0f)*M_PI);
-		cosroll =  (HPDF_REAL)cos((roll/180.0f)*M_PI);
+		sinroll =  (HPDF_REAL)sin((roll/180.0f)*HPDF_PI);
+		cosroll =  (HPDF_REAL)cos((roll/180.0f)*HPDF_PI);
 		leftxprime = leftx*cosroll + upx*sinroll;
 		leftyprime = lefty*cosroll + upy*sinroll;
 		leftzprime = leftz*cosroll + upz*sinroll;

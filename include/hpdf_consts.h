@@ -19,6 +19,8 @@
 #ifndef _HPDF_CONSTS_H
 #define _HPDF_CONSTS_H
 
+#include "hpdf_types.h"
+
 /*----------------------------------------------------------------------------*/
 
 #define  HPDF_TRUE                  1
@@ -26,6 +28,8 @@
 
 #define  HPDF_OK                    0
 #define  HPDF_NOERROR               0
+
+#define  HPDF_PI                    3.14159265358979323846
 
 /*----- default values -------------------------------------------------------*/
 
@@ -149,6 +153,11 @@
 #define HPDF_MAX_DASH_PATTERN       100
 
 #define HPDF_MAX_JWW_NUM            128
+
+static const HPDF_TransMatrix IDENTITY_MATRIX = {1, 0, 0, 1, 0, 0};
+static const HPDF_RGBColor DEF_RGB_COLOR = {0, 0, 0};
+static const HPDF_CMYKColor DEF_CMYK_COLOR = {0, 0, 0, 0};
+static const HPDF_DashMode DEF_DASH_MODE = {{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f}, 0.0f, 0.0f};
 
 /*----------------------------------------------------------------------------*/
 /*----- country code definition ----------------------------------------------*/

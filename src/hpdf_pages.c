@@ -26,10 +26,6 @@
 
 /*----------------------------------------------------------------------------*/
 
-static const HPDF_RGBColor DEF_RGB_COLOR = {0, 0, 0};
-
-static const HPDF_CMYKColor DEF_CMYK_COLOR = {0, 0, 0, 0};
-
 static HPDF_STATUS
 Pages_BeforeWrite  (HPDF_Dict    obj);
 

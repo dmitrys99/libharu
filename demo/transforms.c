@@ -29,7 +29,6 @@
 #include "hpdf.h"
 #include "handler.h"
 
-const HPDF_REAL PI = 3.141592;
 const HPDF_REAL rect_height =  50*HPDF_MM;
 const HPDF_REAL rect_width  =  50*HPDF_MM;
 const HPDF_REAL line_width  = 0.2*HPDF_MM;
@@ -163,7 +162,7 @@ main (int argc, char **argv)
     HPDF_Page_GSave (page);
     draw_rect (page);
 
-    HPDF_Page_Rotate (page, PI/20);
+    HPDF_Page_Rotate (page, HPDF_PI/20);
 
     draw_transformed (page);
     HPDF_Page_GRestore (page);
@@ -180,7 +179,7 @@ main (int argc, char **argv)
     HPDF_Page_GSave (page);
     draw_rect (page);
 
-    HPDF_Page_Skew (page, PI/20, PI/20);
+    HPDF_Page_Skew (page, HPDF_PI/20, HPDF_PI/20);
 
     draw_transformed (page);
     HPDF_Page_GRestore (page);
@@ -197,9 +196,9 @@ main (int argc, char **argv)
     HPDF_Page_GSave (page);
     draw_rect (page);
 
-    HPDF_Page_Skew (page, PI/20, PI/20);
+    HPDF_Page_Skew (page, HPDF_PI/20, HPDF_PI/20);
     HPDF_Page_Scale (page, 0.8, 1.2);
-    HPDF_Page_Rotate (page, PI/20);
+    HPDF_Page_Rotate (page, HPDF_PI/20);
     HPDF_Page_Translate (page, 5*HPDF_MM, 5*HPDF_MM);
 
     draw_transformed (page);
