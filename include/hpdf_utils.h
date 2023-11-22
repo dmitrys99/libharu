@@ -115,37 +115,63 @@ void
 HPDF_UInt16Swap  (HPDF_UINT16  *value);
 
 /**
-  \ingroup page
+  \ingroup utils
   \brief Return name of predefined page size
 */
 const char*
 HPDF_PageSizeName (HPDF_PageSizes size);
 
+/**
+  \ingroup utils
+  \brief Multiply transformation matrices.
+
+  \return Transformation matrix as a result of multiplication of matrices \c m and \c n.
+*/
+
+HPDF_TransMatrix
+HPDF_Matrix_Multiply (HPDF_TransMatrix m, HPDF_TransMatrix n);
+
+HPDF_TransMatrix
+HPDF_Matrix_Translate (HPDF_TransMatrix m, HPDF_REAL dx, HPDF_REAL dy);
+
+HPDF_TransMatrix
+HPDF_Matrix_Scale (HPDF_TransMatrix m, HPDF_REAL sx, HPDF_REAL sy);
+
+HPDF_TransMatrix
+HPDF_Matrix_Rotate (HPDF_TransMatrix m, HPDF_REAL angle);
+
+HPDF_TransMatrix
+HPDF_Matrix_RotateDeg (HPDF_TransMatrix m, HPDF_REAL degrees);
+
+HPDF_TransMatrix
+HPDF_Matrix_Skew (HPDF_TransMatrix m, HPDF_REAL a, HPDF_REAL b);
+
+
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
 
-#define HPDF_NEEDS_ESCAPE(c)    (c < 0x20 || \
-                                 c > 0x7e || \
+#define HPDF_NEEDS_ESCAPE(c)    (c < 0x20  || \
+                                 c > 0x7e  || \
                                  c == '\\' || \
-                                 c == '%' || \
-                                 c == '#' || \
-                                 c == '/' || \
-                                 c == '(' || \
-                                 c == ')' || \
-                                 c == '<' || \
-                                 c == '>' || \
-                                 c == '[' || \
-                                 c == ']' || \
-                                 c == '{' || \
-                                 c == '}' )  \
+                                 c == '%'  || \
+                                 c == '#'  || \
+                                 c == '/'  || \
+                                 c == '('  || \
+                                 c == ')'  || \
+                                 c == '<'  || \
+                                 c == '>'  || \
+                                 c == '['  || \
+                                 c == ']'  || \
+                                 c == '{'  || \
+                                 c == '}'  )  \
 
 #define HPDF_IS_WHITE_SPACE(c)   (c == 0x00 || \
-                                 c == 0x09 || \
-                                 c == 0x0A || \
-                                 c == 0x0C || \
-                                 c == 0x0D || \
-                                 c == 0x20 ) \
+                                  c == 0x09 || \
+                                  c == 0x0A || \
+                                  c == 0x0C || \
+                                  c == 0x0D || \
+                                  c == 0x20 )  \
 
 /*----------------------------------------------------------------------------*/
 /*----- macros for debug -----------------------------------------------------*/
