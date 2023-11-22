@@ -24,6 +24,7 @@ set(
     link_annotation
     make_rawimage
     minimal
+    matrix
     outline_demo
     #outline_demo_jp
     page_sizes_demo
