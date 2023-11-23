@@ -44,6 +44,14 @@
 \example line_demo.c
 \example link_annotation.c
 \example make_rawimage.c
+\example matrix.c
+  \par Matrix transformations combined demo program.
+
+  This program shows usage of matrix multiplication.
+  It allows to produce some delayed and combined calculations on matrices.
+
+  Please pay attention, matrix combination operations and page operations
+  are in reverse order to each other.
 \example minimal.c
   \par Minimal HPDF program demo
 
@@ -73,6 +81,22 @@
 
   Also, some items are inserted to page's "Resources" dictionary.
   It is done using HPDF_Page_GetInheritableItem() function.
+\example pattern2.c
+  \par Multiple dictionaries, arrays and matrix demo
+
+  This demo shows usage of PDF dictionaries and arrays and matrix transformation.
+  PDF tiling pattern is created by feeding corresponding dictionaries.
+  Dictionary can have stream within, in this case it is created using
+  HPDF_DictStream_New() function, otherwise HPDF_Dict_New() should be called.
+
+  Library automatically calculates cross-references when array inserted to dictionary
+  or dictionary inserted to dictionary etc.
+
+  Also, some items are inserted to page's "Resources" dictionary.
+  It is done using HPDF_Page_GetInheritableItem() function.
+
+  Pattern transformation matrix is calculated using set of utility functions:
+  HPDF_Matrix_Scale() and HPDF_Matrix_RotateDeg().
 \example permission.c
 \example png_demo.c
 \example raw_image_demo.c

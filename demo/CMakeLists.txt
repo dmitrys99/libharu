@@ -29,6 +29,7 @@ set(
     #outline_demo_jp
     page_sizes_demo
     pattern
+    pattern2
     permission
     png_demo
     slide_show_demo
