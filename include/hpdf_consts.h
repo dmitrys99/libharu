@@ -157,7 +157,6 @@
 static const HPDF_TransMatrix IDENTITY_MATRIX = {1, 0, 0, 1, 0, 0};
 static const HPDF_RGBColor DEF_RGB_COLOR = {0, 0, 0};
 static const HPDF_CMYKColor DEF_CMYK_COLOR = {0, 0, 0, 0};
-static const HPDF_DashMode DEF_DASH_MODE = {{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f}, 0.0f, 0.0f};
 
 /*----------------------------------------------------------------------------*/
 /*----- country code definition ----------------------------------------------*/
@@ -540,6 +539,7 @@ static const HPDF_DashMode DEF_DASH_MODE = {{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,
 #define HPDF_LANG_ZH    "zh"     /* Chinese */
 #define HPDF_LANG_ZU    "zu"     /* Zulu */
 
+static const HPDF_DashMode DEF_DASH_MODE = {{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f}, 0, 0.0f};
 
 /*----------------------------------------------------------------------------*/
 /*----- Graphics mode --------------------------------------------------------*/
