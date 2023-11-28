@@ -147,26 +147,23 @@ main (int argc, char **argv)
     HPDF_REAL margin = 15*HPDF_MM;
     HPDF_REAL rectWidth = (width - margin*2)/3;
 
-    /* get page stream handler to write directly to */
-    HPDF_PageAttr attr = (HPDF_PageAttr)page->attr;
-
     /* first rectangle */
     HPDF_Page_GSave (page);
-    HPDF_Stream_WriteStr (attr->stream, "/pgcs cs 0 0 1 /hatch1 scn ");
+    HPDF_Page_RawWrite (page, "/pgcs cs 0 0 1 /hatch1 scn ");
     HPDF_Page_Rectangle (page, margin, margin, rectWidth, height - margin*2);
     HPDF_Page_Fill (page);
     HPDF_Page_GRestore (page);
 
     /* second rectangle */
     HPDF_Page_GSave (page);
-    HPDF_Stream_WriteStr (attr->stream, "/pgcs cs 0 0 1 /hatch2 scn ");
+    HPDF_Page_RawWrite (page, "/pgcs cs 0 0 1 /hatch2 scn ");
     HPDF_Page_Rectangle (page, margin+rectWidth, margin, rectWidth, height - margin*2);
     HPDF_Page_Fill (page);
     HPDF_Page_GRestore (page);
 
     /* third rectangle */
     HPDF_Page_GSave (page);
-    HPDF_Stream_WriteStr (attr->stream, "/pgcs cs 0 0 1 /hatch3 scn ");
+    HPDF_Page_RawWrite (page, "/pgcs cs 0 0 1 /hatch3 scn ");
     HPDF_Page_Rectangle (page, margin+rectWidth+rectWidth, margin, rectWidth, height - margin*2);
     HPDF_Page_Fill (page);
     HPDF_Page_GRestore (page);

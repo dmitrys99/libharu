@@ -2985,3 +2985,18 @@ HPDF_Page_Insert_Shared_Content_Stream  (HPDF_Page page,
 
     return ret;
 }
+
+HPDF_EXPORT(HPDF_STATUS)
+HPDF_Page_RawWrite (HPDF_Page   page,
+                    char       *data)
+{
+    if (!HPDF_Page_Validate (page))
+        return HPDF_INVALID_PAGE;
+
+    HPDF_PTRACE((" HPDF_Page_RawWrite\n"));
+
+    HPDF_PageAttr attr = (HPDF_PageAttr)page->attr;
+    HPDF_Stream_WriteStr (attr->stream, data);
+
+    return HPDF_OK;
+}

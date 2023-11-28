@@ -5243,6 +5243,27 @@ HPDF_LoadIccProfileFromFile  (HPDF_Doc     pdf,
                               const char  *icc_file_name,
                               int          numcomponent);
 
+/**
+  \ingroup page
+  \brief Write raw commands to page stream
+  This command allow user to write some data to page stream unconditionally.
+
+  \copydoc dox_param_page
+  \param data Data to be written to page stream
+
+  \copydoc dox_return_ok
+
+  \copydoc dox_error_codes
+
+  - \ref HPDF_INVALID_PAGE
+
+  \warning This command is dangerous! Use it with caution, library does not validate input.
+
+*/
+HPDF_EXPORT(HPDF_STATUS)
+HPDF_Page_RawWrite (HPDF_Page   page,
+                    char       *data);
+
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
