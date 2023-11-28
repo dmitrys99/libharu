@@ -38,8 +38,8 @@
 #include "hpdf_utils.h"
 #include "handler.h"
 
-static const HPDF_REAL cellWidth = HPDF_MM*5;
-static const HPDF_REAL lineWidth = HPDF_MM*0.3;
+static const HPDF_REAL cellWidth = HPDF_MM*2;
+static const HPDF_REAL lineWidth = HPDF_MM*0.1;
 
 /* pattern creation routine */
 HPDF_Dict
@@ -56,7 +56,10 @@ createPattern (HPDF_Doc pdf, HPDF_REAL degrees, HPDF_REAL scale)
 
     char patternData[200];
 
-    sprintf(patternData, "q %f w 0 0 m %f %f l 0 %f m %f 0 l S Q", lineWidth, cellWidth, cellWidth, cellWidth, cellWidth);
+    HPDF_REAL cellWidth_4 = cellWidth / 4;
+    HPDF_REAL cellWidth_34 = cellWidth / 4 * 3;
+
+    sprintf(patternData, "q %f w %f 0 m %f %f l %f 0 m %f %f l S Q", lineWidth, cellWidth_4, cellWidth_4, cellWidth, cellWidth_34, cellWidth_34, cellWidth);
     /* write simple pattern directly with PDF language */
     HPDF_Stream_WriteStr (patDict->stream, (const char*)&patternData);
 
