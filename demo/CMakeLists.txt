@@ -30,6 +30,7 @@ set(
     page_sizes_demo
     pattern
     pattern2
+    pdf_a_conformance
     permission
     png_demo
     slide_show_demo
@@ -76,11 +77,19 @@ foreach(demo ${demos_with_grid_NAMES})
   target_link_libraries(${demo} PUBLIC hpdf)
   if(UNIX AND NOT APPLE)
     target_link_libraries(${demo} PUBLIC m)
-  endif() 
+  endif()
   if(DEMO_C_FLAGS)
     set_target_properties(${demo} PROPERTIES COMPILE_FLAGS ${DEMO_C_FLAGS})
   endif(DEMO_C_FLAGS)
 endforeach()
+
+# the grid_sheet demo needs extra defines
+add_executable(grid_sheet grid_sheet.c)
+target_link_libraries(grid_sheet PUBLIC hpdf)
+  if(UNIX AND NOT APPLE)
+    target_link_libraries(grid_sheet PUBLIC m)
+  endif()
+set_target_properties(grid_sheet PROPERTIES COMPILE_FLAGS "${DEMO_C_FLAGS} -DSTAND_ALONE")
 
 # =======================================================================
 # install demo source, demo executables and other files
@@ -95,6 +104,6 @@ endforeach()
 
 # install demo files
 install(
-  DIRECTORY images mbtext pngsuite rawimage ttfont type1
+  DIRECTORY images mbtext pdf_a pngsuite rawimage ttfont type1
   DESTINATION demo
 )

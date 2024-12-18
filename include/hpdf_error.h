@@ -30,6 +30,7 @@ extern "C" {
 #define HPDF_ARRAY_ITEM_UNEXPECTED_TYPE           0x1003
 #define HPDF_BINARY_LENGTH_ERR                    0x1004
 #define HPDF_CANNOT_GET_PALLET                    0x1005
+/*                                                0x1006 */
 #define HPDF_DICT_COUNT_ERR                       0x1007
 #define HPDF_DICT_ITEM_NOT_FOUND                  0x1008
 #define HPDF_DICT_ITEM_UNEXPECTED_TYPE            0x1009
@@ -150,6 +151,12 @@ extern "C" {
 #define HPDF_INVALID_PAGE_INDEX                   0x1067
 #define HPDF_INVALID_URI                          0x1068
 #define HPDF_PAGE_LAYOUT_OUT_OF_RANGE             0x1069
+/*                                                0x106A */
+/*                                                0x106B */
+/*                                                0x106C */
+/*                                                0x106D */
+/*                                                0x106E */
+/*                                                0x106F */
 #define HPDF_PAGE_MODE_OUT_OF_RANGE               0x1070
 #define HPDF_PAGE_NUM_STYLE_OUT_OF_RANGE          0x1071
 #define HPDF_ANNOT_INVALID_ICON                   0x1072
@@ -160,6 +167,12 @@ extern "C" {
 #define HPDF_PAGE_INVALID_DISPLAY_TIME            0x1077
 #define HPDF_PAGE_INVALID_TRANSITION_TIME         0x1078
 #define HPDF_INVALID_PAGE_SLIDESHOW_TYPE          0x1079
+/*                                                0x107A */
+/*                                                0x107B */
+/*                                                0x107C */
+/*                                                0x107D */
+/*                                                0x107E */
+/*                                                0x107F */
 #define HPDF_EXT_GSTATE_OUT_OF_RANGE              0x1080
 #define HPDF_INVALID_EXT_GSTATE                   0x1081
 #define HPDF_EXT_GSTATE_READ_ONLY                 0x1082
@@ -224,4 +237,3 @@ HPDF_RaiseError  (HPDF_Error   error,
 #endif /* __cplusplus */
 
 #endif /* _HPDF_ERROR_H */
-

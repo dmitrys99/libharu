@@ -115,4 +115,3 @@ HPDF_GState_Free  (HPDF_MMgr    mmgr,
 
     return current;
 }
-
