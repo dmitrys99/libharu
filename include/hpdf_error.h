@@ -50,9 +50,9 @@ extern "C" {
 
   \ingroup error
   \brief Memory allocation failed
-  \todo Deprecate and rename constant
+  \todo Deprecate constant
 */
-#define HPDF_FAILD_TO_ALLOC_MEM                   0x1015
+#define HPDF_FAILED_TO_ALLOC_MEM                  0x1015
 
 /**
 

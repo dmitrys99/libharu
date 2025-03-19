@@ -206,7 +206,7 @@ HPDF_GetDocMMgr  (HPDF_Doc doc);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
   \see
     HPDF_FreeDoc()
@@ -282,7 +282,7 @@ HPDF_FreeDocAll  (HPDF_Doc  pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_STATUS)
@@ -372,7 +372,7 @@ HPDF_ResetStream  (HPDF_Doc     pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_FILE_IO_ERROR
 
 */
@@ -456,7 +456,7 @@ HPDF_CheckError  (HPDF_Error   error);
   - \ref HPDF_INVALID_DOCUMENT
   - \ref HPDF_INVALID_PARAMETER
   - \ref HPDF_INVALID_DOCUMENT_STATE
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_STATUS)
@@ -520,7 +520,7 @@ HPDF_GetPageLayout  (HPDF_Doc   pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_PAGE_LAYOUT_OUT_OF_RANGE
 
 */
@@ -562,7 +562,7 @@ HPDF_GetPageMode  (HPDF_Doc   pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_PAGE_MODE_OUT_OF_RANGE
 
 */
@@ -592,7 +592,7 @@ HPDF_SetViewerPreference  (HPDF_Doc     pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_DESTINATION
   - \ref HPDF_PAGE_MODE_OUT_OF_RANGE
 
@@ -630,7 +630,7 @@ HPDF_GetCurrentPage  (HPDF_Doc  pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_Page)
@@ -649,7 +649,7 @@ HPDF_AddPage  (HPDF_Doc   pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_PAGE - An invalid page handle was set.
 
 */
@@ -682,7 +682,7 @@ HPDF_InsertPage  (HPDF_Doc    pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM Memory allocation failed.
+  - \ref HPDF_FAILED_TO_ALLOC_MEM Memory allocation failed.
   - \ref HPDF_PAGE_NUM_STYLE_OUT_OF_RANGE An invalid page numbering style is specified.
 
   \par Sample
@@ -722,7 +722,7 @@ HPDF_AddPageLabel  (HPDF_Doc            pdf,
 
   - \ref HPDF_INVALID_PAGE
   - \ref HPDF_PAGE_INVALID_SIZE
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_STATUS)
@@ -744,7 +744,7 @@ HPDF_Page_SetWidth  (HPDF_Page   page,
 
   - \ref HPDF_INVALID_PAGE
   - \ref HPDF_PAGE_INVALID_SIZE
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_STATUS)
@@ -775,7 +775,7 @@ HPDF_Page_SetBoundary  (HPDF_Page           page,
   - \ref HPDF_INVALID_PAGE
   - \ref HPDF_PAGE_INVALID_SIZE
   - \ref HPDF_PAGE_INVALID_DIRECTION
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_STATUS)
@@ -823,7 +823,7 @@ HPDF_Page_SetZoom  (HPDF_Page     page,
 
   \copydoc dox_error_codes
 
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_DOCUMENT
   - \ref HPDF_INVALID_FONT_NAME
   - \ref HPDF_INVALID_ENCODING_NAME
@@ -852,7 +852,7 @@ HPDF_GetFont  (HPDF_Doc     pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_FONT_EXISTS
   - \ref HPDF_INVALID_AFM_HEADER
   - \ref HPDF_INVALID_CHAR_MATRICS_DATA
@@ -886,7 +886,7 @@ HPDF_GetTTFontDefFromFile (HPDF_Doc     pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_FONT_EXISTS
   - \ref HPDF_INVALID_TTC_INDEX
   - \ref HPDF_INVALID_TTC_FILE
@@ -918,7 +918,7 @@ HPDF_LoadTTFontFromFile (HPDF_Doc     pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_FONT_EXISTS
   - \ref HPDF_INVALID_TTC_INDEX
   - \ref HPDF_INVALID_TTC_FILE
@@ -975,7 +975,7 @@ HPDF_LoadTTFontFromMemory (HPDF_Doc         pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_DUPLICATE_REGISTRATION
 
 */
@@ -1012,7 +1012,7 @@ HPDF_UseJPFonts   (HPDF_Doc   pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_DUPLICATE_REGISTRATION
 
 */
@@ -1041,7 +1041,7 @@ HPDF_UseKRFonts   (HPDF_Doc   pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_DUPLICATE_REGISTRATION
 
 */
@@ -1067,7 +1067,7 @@ HPDF_UseCNSFonts   (HPDF_Doc   pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_DUPLICATE_REGISTRATION
 
 */
@@ -1093,7 +1093,7 @@ HPDF_UseCNTFonts   (HPDF_Doc   pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_OUTLINE
 
   \todo Clarify which object is returned when encoder is \c NULL
@@ -1119,7 +1119,7 @@ HPDF_CreateOutline  (HPDF_Doc       pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_OUTLINE
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_STATUS)
@@ -1140,7 +1140,7 @@ HPDF_Outline_SetOpened  (HPDF_Outline  outline,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_OUTLINE
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_DESTINATION
 
 */
@@ -1164,7 +1164,7 @@ HPDF_Outline_SetDestination (HPDF_Outline      outline,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_Destination)
@@ -1356,7 +1356,7 @@ HPDF_Destination_SetFitBV  (HPDF_Destination  dst,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_ENCODING_NAME
 
 */
@@ -1396,7 +1396,7 @@ HPDF_GetCurrentEncoder  (HPDF_Doc   pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_ENCODING_NAME
 
 */
@@ -1492,7 +1492,7 @@ HPDF_Encoder_GetWritingMode (HPDF_Encoder   encoder);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_DUPLICATE_REGISTRATION
 
 */
@@ -1521,7 +1521,7 @@ HPDF_UseJPEncodings   (HPDF_Doc   pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_DUPLICATE_REGISTRATION
 
 */
@@ -1550,7 +1550,7 @@ HPDF_UseKREncodings   (HPDF_Doc   pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_DUPLICATE_REGISTRATION
 
 */
@@ -1580,7 +1580,7 @@ HPDF_UseCNSEncodings   (HPDF_Doc   pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_DUPLICATE_REGISTRATION
 
 */
@@ -1603,7 +1603,7 @@ HPDF_UseCNTEncodings   (HPDF_Doc   pdf);
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_DUPLICATE_REGISTRATION
 
 */
@@ -1654,7 +1654,7 @@ HPDF_Page_Create3DAnnot    (HPDF_Page       page,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_ENCODER
 
 */
@@ -1698,7 +1698,7 @@ HPDF_Page_CreateWidgetAnnot (HPDF_Page  page,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_PAGE
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_DESTINATION
 
 */
@@ -1722,7 +1722,7 @@ HPDF_Page_CreateLinkAnnot  (HPDF_Page          page,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_PAGE
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_Annotation)
@@ -1805,7 +1805,7 @@ HPDF_Page_CreateCircleAnnot  (HPDF_Page      page,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_ANNOTATION
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
   \see _HPDF_AnnotHighlightMode
 */
@@ -1832,7 +1832,7 @@ HPDF_LinkAnnot_SetJavaScript  (HPDF_Annotation   annot,
 
   - \ref HPDF_INVALID_ANNOTATION
   - \ref HPDF_INVALID_PARAMETER
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_STATUS)
@@ -1856,7 +1856,7 @@ HPDF_LinkAnnot_SetBorderStyle  (HPDF_Annotation   annot,
 
   - \ref HPDF_INVALID_ANNOTATION
   - \ref HPDF_ANNOT_INVALID_ICON
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
   \see _HPDF_AnnotIcon
 
@@ -1879,7 +1879,7 @@ HPDF_TextAnnot_SetIcon  (HPDF_Annotation   annot,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_ANNOTATION
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_STATUS)
@@ -2018,7 +2018,7 @@ HPDF_LineAnnot_SetCaption  (HPDF_Annotation             annot,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_ANNOTATION
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
   \see _HPDF_BSSubtype
 
@@ -2120,7 +2120,7 @@ HPDF_3DView_Add3DC3DMeasure  (HPDF_Dict        view,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_PNG_IMAGE
 
 */
@@ -2142,7 +2142,7 @@ HPDF_LoadPngImageFromMem  (HPDF_Doc           pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_UNSUPPORTED_FUNC
   - \ref HPDF_LIBPNG_ERROR
   - \ref HPDF_INVALID_PNG_IMAGE
@@ -2169,7 +2169,7 @@ HPDF_LoadPngImageFromFile (HPDF_Doc      pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_UNSUPPORTED_FUNC
   - \ref HPDF_LIBPNG_ERROR
   - \ref HPDF_INVALID_PNG_IMAGE
@@ -2193,7 +2193,7 @@ HPDF_LoadPngImageFromFile2 (HPDF_Doc      pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_JPEG_DATA
   - \ref HPDF_UNSUPPORTED_JPEG_FORMAT
 
@@ -2216,7 +2216,7 @@ HPDF_LoadJpegImageFromFile (HPDF_Doc      pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_JPEG_DATA
   - \ref HPDF_UNSUPPORTED_JPEG_FORMAT
 
@@ -2264,7 +2264,7 @@ HPDF_Image_LoadRaw1BitImageFromMem ( HPDF_Doc          pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_COLOR_SPACE
   - \ref HPDF_INVALID_IMAGE
   - \ref HPDF_FILE_IO_ERROR
@@ -2297,7 +2297,7 @@ HPDF_LoadRawImageFromFile  (HPDF_Doc          pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_COLOR_SPACE
   - \ref HPDF_INVALID_IMAGE
 
@@ -2422,7 +2422,7 @@ HPDF_Image_GetColorSpace (HPDF_Image  image);
 
   - \ref HPDF_INVALID_IMAGE
   - \ref HPDF_INVALID_COLOR_SPACE
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_PARAMETER
 
 */
@@ -2450,7 +2450,7 @@ HPDF_Image_SetColorMask (HPDF_Image   image,
 
   - \ref HPDF_INVALID_IMAGE
   - \ref HPDF_INVALID_BIT_PER_COMPONENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_STATUS)
@@ -2484,7 +2484,7 @@ HPDF_Image_SetMaskImage  (HPDF_Image   image,
   \copydoc dox_error_codes
 
     - \ref HPDF_INVALID_DOCUMENT
-    - \ref HPDF_FAILD_TO_ALLOC_MEM
+    - \ref HPDF_FAILED_TO_ALLOC_MEM
     - \ref HPDF_INVALID_PARAMETER
 
   \see HPDF_GetInfoAttr(), HPDF_SetInfoDateAttr()
@@ -2516,7 +2516,7 @@ HPDF_SetInfoAttr (HPDF_Doc        pdf,
   \copydoc dox_error_codes
 
     - \ref HPDF_INVALID_DOCUMENT
-    - \ref HPDF_FAILD_TO_ALLOC_MEM
+    - \ref HPDF_FAILED_TO_ALLOC_MEM
     - \ref HPDF_INVALID_PARAMETER
 
   \see HPDF_SetInfoAttr(), HPDF_SetInfoDateAttr()
@@ -2543,7 +2543,7 @@ HPDF_GetInfoAttr (HPDF_Doc        pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_INVALID_PARAMETER
   - \ref HPDF_INVALID_DATE_TIME
 
@@ -2572,7 +2572,7 @@ HPDF_SetInfoDateAttr (HPDF_Doc        pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_ENCRYPT_INVALID_PASSWORD
 
 */
@@ -2602,7 +2602,7 @@ HPDF_SetPassword  (HPDF_Doc      pdf,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_DOCUMENT
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_STATUS)
@@ -2630,7 +2630,7 @@ HPDF_SetPermission  (HPDF_Doc    pdf,
 
   - \ref HPDF_INVALID_DOCUMENT
   - \ref HPDF_INVALID_ENCRYPT_KEY_LEN
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_STATUS)
@@ -2664,7 +2664,7 @@ HPDF_SetEncryptionMode  (HPDF_Doc           pdf,
 
   - \ref HPDF_INVALID_DOCUMENT
   - \ref HPDF_INVALID_COMPRESSION_MODE
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
 
 */
 HPDF_EXPORT(HPDF_STATUS)
@@ -2931,7 +2931,7 @@ HPDF_ExtGState_SetBlendMode  (HPDF_ExtGState   ext_gstate,
   \copydoc dox_error_codes
 
   - \ref HPDF_INVALID_PAGE
-  - \ref HPDF_FAILD_TO_ALLOC_MEM
+  - \ref HPDF_FAILED_TO_ALLOC_MEM
   - \ref HPDF_PAGE_FONT_NOT_FOUND
 
 */
