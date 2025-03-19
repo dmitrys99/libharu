@@ -203,3 +203,4 @@ int main (int argc, char **argv)
     return 0;
 }
 
+    HPDF_Page_SetSize (page, HPDF_PAGE_SIZE_US_LETTER, HPDF_PAGE_PORTRAIT);

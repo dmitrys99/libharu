@@ -16,7 +16,6 @@ set(
     encoding_list
     encryption
     ext_gstate_demo
-    font_demo
     image_demo
     jpeg_demo
     jpfont_demo
@@ -31,9 +30,6 @@ set(
     pattern
     pattern2
     pdf_a_conformance
-    page_sizes_demo
-    pattern
-    pattern2
     permission
     png_demo
     slide_show_demo
@@ -48,7 +44,6 @@ set(
   demos_with_grid_NAMES
     arc_demo
     chfont_demo
-    grid_demo
     raw_image_demo
     text_demo
     text_demo2
@@ -87,12 +82,12 @@ foreach(demo ${demos_with_grid_NAMES})
 endforeach()
 
 # the grid_sheet demo needs extra defines
-add_executable(grid_sheet grid_sheet.c utils.c)
-target_link_libraries(grid_sheet PUBLIC hpdf)
+add_executable(grid_demo grid_demo.c grid_sheet.c handler.c)
+target_link_libraries(grid_demo PUBLIC hpdf)
   if(UNIX AND NOT APPLE)
-    target_link_libraries(grid_sheet PUBLIC m)
+    target_link_libraries(grid_demo PUBLIC m)
   endif() 
-set_target_properties(grid_sheet PROPERTIES COMPILE_FLAGS "${DEMO_C_FLAGS} -DSTANDALONE")
+set_target_properties(grid_demo PROPERTIES COMPILE_FLAGS "${DEMO_C_FLAGS} -DSTANDALONE")
 
 # =======================================================================
 # install demo source, demo executables and other files
