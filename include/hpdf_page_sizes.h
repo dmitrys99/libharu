@@ -29,10 +29,7 @@ extern "C" {
 #endif
 
 /**
-<<<<<<< HEAD
   \ingroup page
-=======
->>>>>>> 8fd8e32 (Add predefined page size formats)
   \brief Data structure representing page size (width and height), in points.
 */
 typedef struct _HPDF_PageSizeValue {
@@ -525,15 +522,6 @@ typedef enum _HPDF_PageSizes {
     HPDF_PAGE_SIZE_BILLBOARD_16_SHEET,
     /// Billboard "32 Sheet" page size (4064.0mm x 3048.0mm)
     HPDF_PAGE_SIZE_BILLBOARD_32_SHEET,
-<<<<<<< HEAD
-=======
-    /// Billboard "48 Sheet" page size (6096.0mm x 3048.0mm)
-    HPDF_PAGE_SIZE_BILLBOARD_48_SHEET,
-    /// Billboard "64 Sheet" page size (8128.0mm x 3048.0mm)
-    HPDF_PAGE_SIZE_BILLBOARD_64_SHEET,
-    /// Billboard "96 Sheet" page size (12192.0mm x 3048.0mm)
-    HPDF_PAGE_SIZE_BILLBOARD_96_SHEET,
->>>>>>> 8fd8e32 (Add predefined page size formats)
 
     /// Japanese JIS "JB0" page size (1030.0mm x 1456.0mm)
     HPDF_PAGE_SIZE_JAPANESE_JB0,
@@ -927,10 +915,7 @@ typedef enum _HPDF_PageSizes {
 } HPDF_PageSizes;
 
 /**
-<<<<<<< HEAD
   \ingroup page
-=======
->>>>>>> 8fd8e32 (Add predefined page size formats)
   \brief Predefined page sizes (in points).
 */
 static const HPDF_PageSizeValue HPDF_PREDEFINED_PAGE_SIZES[] = {
@@ -1167,12 +1152,6 @@ static const HPDF_PageSizeValue HPDF_PREDEFINED_PAGE_SIZES[] = {
     { 8640.001, 4320.001} /* HPDF_PAGE_SIZE_BILLBOARD_12_SHEET */,
     { 5760.001, 8640.001} /* HPDF_PAGE_SIZE_BILLBOARD_16_SHEET */,
     {11520.001, 8640.001} /* HPDF_PAGE_SIZE_BILLBOARD_32_SHEET */,
-<<<<<<< HEAD
-=======
-    {17280.002, 8640.001} /* HPDF_PAGE_SIZE_BILLBOARD_48_SHEET */,
-    {23040.003, 8640.001} /* HPDF_PAGE_SIZE_BILLBOARD_64_SHEET */,
-    {34560.004, 8640.001} /* HPDF_PAGE_SIZE_BILLBOARD_96_SHEET */,
->>>>>>> 8fd8e32 (Add predefined page size formats)
 
     { 2919.685, 4127.245} /* HPDF_PAGE_SIZE_JAPANESE_JB0 */,
     { 2063.622, 2919.685} /* HPDF_PAGE_SIZE_JAPANESE_JB1 */,
@@ -1378,10 +1357,7 @@ static const HPDF_PageSizeValue HPDF_PREDEFINED_PAGE_SIZES[] = {
 };
 
 /**
-<<<<<<< HEAD
   \ingroup page
-=======
->>>>>>> 8fd8e32 (Add predefined page size formats)
   \brief Predefined page size names.
 */
 static const char * const HPDF_PREDEFINED_PAGE_SIZE_NAMES[] = {
@@ -1618,12 +1594,6 @@ static const char * const HPDF_PREDEFINED_PAGE_SIZE_NAMES[] = {
     "Billboard '12 Sheet' page size (3048.0mm x 1524.0mm)",
     "Billboard '16 Sheet' page size (2032.0mm x 3048.0mm)",
     "Billboard '32 Sheet' page size (4064.0mm x 3048.0mm)",
-<<<<<<< HEAD
-=======
-    "Billboard '48 Sheet' page size (6096.0mm x 3048.0mm)",
-    "Billboard '64 Sheet' page size (8128.0mm x 3048.0mm)",
-    "Billboard '96 Sheet' page size (12192.0mm x 3048.0mm)",
->>>>>>> 8fd8e32 (Add predefined page size formats)
 
     "Japanese JIS 'JB0' page size (1030.0mm x 1456.0mm)",
     "Japanese JIS 'JB1' page size (728.0mm x 1030.0mm)",
