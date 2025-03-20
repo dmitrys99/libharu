@@ -86,7 +86,7 @@ add_executable(grid_demo grid_demo.c grid_sheet.c handler.c)
 target_link_libraries(grid_demo PUBLIC hpdf)
   if(UNIX AND NOT APPLE)
     target_link_libraries(grid_demo PUBLIC m)
-  endif() 
+  endif()
 set_target_properties(grid_demo PROPERTIES COMPILE_FLAGS "${DEMO_C_FLAGS} -DSTANDALONE")
 
 # =======================================================================

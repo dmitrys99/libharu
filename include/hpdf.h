@@ -943,6 +943,13 @@ HPDF_LoadTTFontFromMemory (HPDF_Doc         pdf,
                            HPDF_UINT        size,
                            HPDF_BOOL        embedding);
 
+HPDF_EXPORT(HPDF_STATUS)
+HPDF_AddPageLabel  (HPDF_Doc            pdf,
+                    HPDF_UINT           page_num,
+                    HPDF_PageNumStyle   style,
+                    HPDF_UINT           first_page,
+                    const char         *prefix);
+
 
 /**
 

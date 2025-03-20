@@ -37,6 +37,10 @@ HPDF_EXPORT(HPDF_STATUS)
 HPDF_PDFA_SetPDFAConformance (HPDF_Doc pdf,
                               HPDF_PDFAType pdfatype);
 
+HPDF_EXPORT(HPDF_STATUS)
+HPDF_PDFA_SetPDFAConformance(HPDF_Doc pdf,
+                             HPDF_PDFAType pdfatype);
+
 HPDF_STATUS
 HPDF_PDFA_AddXmpMetadata(HPDF_Doc pdf);
 
