@@ -1066,7 +1066,7 @@ HPDF_Page_GetHeight  (HPDF_Page    page)
 HPDF_EXPORT(HPDF_Font)
 HPDF_Page_GetCurrentFont  (HPDF_Page   page)
 {
-    HPDF_PTRACE((" HPDF_Page_GetFontName\n"));
+    HPDF_PTRACE((" HPDF_Page_GetCurrentFont\n"));
 
     if (HPDF_Page_Validate (page)) {
         HPDF_PageAttr attr = (HPDF_PageAttr)page->attr;
