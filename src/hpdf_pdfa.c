@@ -297,6 +297,8 @@ HPDF_PDFA_AddXmpMetadata(HPDF_Doc pdf)
         /* Add the pdfaid block */
         conformanceVersion = -1;
         switch(pdf->pdfa_type) {
+          case HPDF_PDFA_NON_PDFA:
+            break;
           case HPDF_PDFA_1A:
             ret += HPDF_Stream_WriteStr(xmp->stream, PDFAID_PDFA1A);
             conformanceVersion = HPDF_VER_14;
