@@ -16,8 +16,11 @@
  *
  */
 
-#include <stdlib.h>
 #include <stdio.h>
+
+#ifdef LIBHPDF_ASIAN_SUPPORT
+
+#include <stdlib.h>
 #include <string.h>
 #include <setjmp.h>
 #include "hpdf.h"
@@ -278,3 +281,14 @@ main  (int      argc,
 
     return 0;
 }
+
+#else /* LIBHPDF_ASIAN_SUPPORT */
+
+int main()
+{
+    printf("WARNING: character_map was not built correctly. \n"
+           "Make sure Asian support is enabled, see LIBHPDF_ASIAN_SUPPORT.\n");
+    return 0;
+}
+
+#endif /* LIBHPDF_ASIAN_SUPPORT */

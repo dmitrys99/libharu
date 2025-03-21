@@ -950,6 +950,7 @@ HPDF_AddPageLabel  (HPDF_Doc            pdf,
                     HPDF_UINT           first_page,
                     const char         *prefix);
 
+#ifdef LIBHPDF_ASIAN_SUPPORT
 
 /**
 
@@ -1081,6 +1082,7 @@ HPDF_UseCNSFonts   (HPDF_Doc   pdf);
 HPDF_EXPORT(HPDF_STATUS)
 HPDF_UseCNTFonts   (HPDF_Doc   pdf);
 
+#endif /* LIBHPDF_ASIAN_SUPPORT */
 
 /*--------------------------------------------------------------------------*/
 /*----- outline ------------------------------------------------------------*/
@@ -1476,6 +1478,8 @@ HPDF_Encoder_GetUnicode  (HPDF_Encoder   encoder,
 HPDF_EXPORT(HPDF_WritingMode)
 HPDF_Encoder_GetWritingMode (HPDF_Encoder   encoder);
 
+#ifdef LIBHPDF_ASIAN_SUPPORT
+
 /**
 
   \ingroup encode
@@ -1593,6 +1597,8 @@ HPDF_UseCNSEncodings   (HPDF_Doc   pdf);
 */
 HPDF_EXPORT(HPDF_STATUS)
 HPDF_UseCNTEncodings   (HPDF_Doc   pdf);
+
+#endif /* LIBHPDF_ASIAN_SUPPORT */
 
 /**
 

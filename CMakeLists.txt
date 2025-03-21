@@ -31,6 +31,8 @@ option(LIBHPDF_EXAMPLES "Build libharu examples" OFF)
 option(LIBHPDF_DEBUG "Enable HPDF Debug")
 option(LIBHPDF_DEBUG_TRACE "Enable HPDF Debug trace")
 
+option(LIBHPDF_ASIAN_SUPPORT "Build libharu with Asian language support" ON)
+
 # Enable exceptions on linux if required
 # (eg if you are using libharu in a C++ environment,
 # and you want your error-callback to throw an exception,

@@ -32,6 +32,6 @@ demo_error_handler  (HPDF_STATUS   error_no,
 
 
 // Same as ÓÔŐÖ×ŘŮ, but in ISO8859-2 codepage
-static const char iso8859_2_text[7] = "\xD3\xD4\xD5\xD6\xD7\xD8\xD9";
+static const char iso8859_2_text[8] = "\xD3\xD4\xD5\xD6\xD7\xD8\xD9\x00";
 
 #endif /* __UTILS_H */

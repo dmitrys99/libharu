@@ -18,10 +18,6 @@ set(
     hpdf_direct.c
     hpdf_doc_png.c
     hpdf_doc.c
-    hpdf_encoder_cns.c
-    hpdf_encoder_cnt.c
-    hpdf_encoder_jp.c
-    hpdf_encoder_kr.c
     hpdf_encoder_utf.c
     hpdf_encoder.c
     hpdf_encrypt.c
@@ -34,10 +30,6 @@ set(
     hpdf_font.c
     hpdf_fontdef_base14.c
     hpdf_fontdef_cid.c
-    hpdf_fontdef_cns.c
-    hpdf_fontdef_cnt.c
-    hpdf_fontdef_jp.c
-    hpdf_fontdef_kr.c
     hpdf_fontdef_tt.c
     hpdf_fontdef_type1.c
     hpdf_fontdef.c
@@ -69,6 +61,21 @@ set(
     hpdf_exdata.c
     hpdf_encoder_utf.c
 )
+
+if (LIBHPDF_ASIAN_SUPPORT)
+set(LIBHPDF_SRCS
+    ${LIBHPDF_SRCS}
+    hpdf_fontdef_cns.c
+    hpdf_fontdef_cnt.c
+    hpdf_fontdef_jp.c
+    hpdf_fontdef_kr.c
+    hpdf_encoder_cns.c
+    hpdf_encoder_cnt.c
+    hpdf_encoder_jp.c
+    hpdf_encoder_kr.c
+)
+endif()
+
 
 set_property(SOURCE hpdf_shading.c hpdf_font_tt.c hpdf_fontdef_tt.c
   PROPERTY

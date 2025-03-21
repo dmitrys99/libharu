@@ -9,3 +9,6 @@
 
 /* debug trace enabled */
 #cmakedefine LIBHPDF_DEBUG_TRACE
+
+/* Include Asian encoder */
+#cmakedefine LIBHPDF_ASIAN_SUPPORT
