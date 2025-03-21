@@ -84,7 +84,7 @@ stage. These options must be given at the command line with the -D flag, e.g.
 cmake -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Debug ..\libharu
 
   CMAKE_BUILD_TYPE=Debug|Release - debug or release build
-  BUILD_SHARED_LIBS=ON|OFF - shared or static build
+  LIBHPDF_SHARED_LIB=ON|OFF - shared or static build
   CMAKE_COLOR_MAKEFILE=ON|OFF - color output
   CMAKE_VERBOSE_MAKEFILE=ON|OFF - verbose makefile output
   
