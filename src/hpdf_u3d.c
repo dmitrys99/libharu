@@ -17,8 +17,33 @@
 #include "hpdf_conf.h"
 #include "hpdf_utils.h"
 #include "hpdf.h"
+#include "hpdf_u3d.h"
 
 #include <string.h>
+
+HPDF_EXPORT(HPDF_Dict)
+HPDF_Page_Create3DView    (HPDF_Page        page,
+                           HPDF_U3D         u3d,
+                           HPDF_Annotation  annot3d,
+                           const char      *name)
+{
+    HPDF_PageAttr attr;
+    HPDF_Dict view;
+
+    HPDF_PTRACE((" HPDF_Page_Create3DView\n"));
+    HPDF_UNUSED(annot3d);
+
+    if (!HPDF_Page_Validate (page))
+        return NULL;
+
+    attr = (HPDF_PageAttr)page->attr;
+
+    view = HPDF_3DView_New( page->mmgr, attr->xref, u3d, name);
+    if (!view) {
+        HPDF_CheckError (page->error);
+    }
+    return view;
+}
 
 HPDF_U3D
 HPDF_U3D_LoadU3D  (HPDF_MMgr        mmgr,

@@ -67,3 +67,22 @@ HPDF_3DAnnotExData_Set3DMeasurement(HPDF_ExData exdata,
 	return ret;
 }
 
+HPDF_EXPORT(HPDF_ExData)
+HPDF_Page_Create3DAnnotExData(HPDF_Page page)
+{
+    HPDF_PageAttr attr;
+    HPDF_Annotation exData;
+
+    HPDF_PTRACE((" HPDF_Page_Create3DAnnotExData\n"));
+
+    if (!HPDF_Page_Validate (page))
+        return NULL;
+
+    attr = (HPDF_PageAttr)page->attr;
+
+    exData = HPDF_3DAnnotExData_New(page->mmgr, attr->xref);
+    if ( !exData)
+        HPDF_CheckError (page->error);
+
+    return exData;
+}
