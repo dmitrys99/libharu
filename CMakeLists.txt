@@ -32,6 +32,8 @@ option(LIBHPDF_DEBUG "Enable HPDF Debug")
 option(LIBHPDF_DEBUG_TRACE "Enable HPDF Debug trace")
 
 option(LIBHPDF_ASIAN_SUPPORT "Build libharu with Asian language support" ON)
+option(LIBHPDF_U3D_SUPPORT "Build libharu with U3D feature enabled" ON)
+
 
 # Enable exceptions on linux if required
 # (eg if you are using libharu in a C++ environment,

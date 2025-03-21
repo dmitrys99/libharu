@@ -53,7 +53,6 @@ set(
     hpdf_shading.c
     hpdf_streams.c
     hpdf_string.c
-    hpdf_u3d.c
     hpdf_utils.c
     hpdf_xref.c
     hpdf_pdfa.c
@@ -63,6 +62,7 @@ set(
 )
 
 if (LIBHPDF_ASIAN_SUPPORT)
+
 set(LIBHPDF_SRCS
     ${LIBHPDF_SRCS}
     hpdf_fontdef_cns.c
@@ -75,6 +75,15 @@ set(LIBHPDF_SRCS
     hpdf_encoder_kr.c
 )
 endif()
+
+if (LIBHPDF_ASIAN_SUPPORT)
+
+set(LIBHPDF_SRCS
+    ${LIBHPDF_SRCS}
+    hpdf_u3d.c
+)
+endif()
+
 
 
 set_property(SOURCE hpdf_shading.c hpdf_font_tt.c hpdf_fontdef_tt.c

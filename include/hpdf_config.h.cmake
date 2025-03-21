@@ -12,3 +12,6 @@
 
 /* Include Asian encoder */
 #cmakedefine LIBHPDF_ASIAN_SUPPORT
+
+/* Include u3d feature */
+#cmakedefine LIBHPDF_U3D_SUPPORT

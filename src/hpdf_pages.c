@@ -35,10 +35,6 @@ Page_OnFree  (HPDF_Dict  obj);
 static HPDF_STATUS
 AddResource  (HPDF_Page  page);
 
-//static HPDF_STATUS
-//AddAnnotation  (HPDF_Page        page,
-//                HPDF_Annotation  annot);
-
 static HPDF_UINT
 GetPageCount  (HPDF_Dict    pages);
 

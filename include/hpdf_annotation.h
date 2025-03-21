@@ -19,6 +19,13 @@
 #define _HPDF_ANNOTATION_H
 
 #include "hpdf_objects.h"
+#include "hpdf.h"
+
+#ifdef LIBHPDF_U3D_SUPPORT
+
+#include "hpdf_u3d.h"
+
+#endif /* LIBHPDF_U3D_SUPPORT */
 
 #ifdef __cplusplus
 extern "C" {
@@ -54,15 +61,6 @@ HPDF_URILinkAnnot_New  (HPDF_MMgr          mmgr,
 
 
 HPDF_Annotation
-HPDF_3DAnnot_New  (HPDF_MMgr        mmgr,
-                   HPDF_Xref        xref,
-                   HPDF_Rect        rect,
-                   HPDF_BOOL        tb,
-                   HPDF_BOOL        np,
-                   HPDF_U3D         u3d,
-                   HPDF_Image       ap);
-
-HPDF_Annotation
 HPDF_MarkupAnnot_New    (HPDF_MMgr        mmgr,
 						 HPDF_Xref        xref,
 						 HPDF_Rect        rect,
@@ -93,6 +91,28 @@ HPDF_ProjectionAnnot_New (HPDF_MMgr         mmgr,
 
 HPDF_BOOL
 HPDF_Annotation_Validate (HPDF_Annotation  annot);
+
+#ifdef LIBHPDF_U3D_SUPPORT
+
+HPDF_Annotation
+HPDF_3DAnnot_New  (HPDF_MMgr        mmgr,
+                   HPDF_Xref        xref,
+                   HPDF_Rect        rect,
+                   HPDF_BOOL        tb,
+                   HPDF_BOOL        np,
+                   HPDF_U3D         u3d,
+                   HPDF_Image       ap);
+
+HPDF_EXPORT(HPDF_Annotation)
+HPDF_Page_Create3DAnnot    (HPDF_Page       page,
+                            HPDF_Rect       rect,
+                            HPDF_BOOL       tb,
+                            HPDF_BOOL       np,
+                            HPDF_U3D        u3d,
+                            HPDF_Image      ap);
+
+#endif /* LIBHPDF_U3D_SUPPORT */
+
 
 #ifdef __cplusplus
 }

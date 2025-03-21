@@ -73,7 +73,6 @@ typedef HPDF_HANDLE   HPDF_XObject;
 typedef HPDF_HANDLE   HPDF_Annotation;
 typedef HPDF_HANDLE   HPDF_ExtGState;
 typedef HPDF_HANDLE   HPDF_FontDef;
-typedef HPDF_HANDLE   HPDF_U3D;
 typedef HPDF_HANDLE   HPDF_JavaScript;
 typedef HPDF_HANDLE   HPDF_Error;
 typedef HPDF_HANDLE   HPDF_MMgr;
@@ -1642,14 +1641,6 @@ HPDF_Page_CreateXObjectAsWhiteRect  (HPDF_Doc   pdf,
 /*--------------------------------------------------------------------------*/
 /*----- annotation ---------------------------------------------------------*/
 
-HPDF_EXPORT(HPDF_Annotation)
-HPDF_Page_Create3DAnnot    (HPDF_Page       page,
-                            HPDF_Rect       rect,
-                            HPDF_BOOL       tb,
-                            HPDF_BOOL       np,
-                            HPDF_U3D        u3d,
-                            HPDF_Image      ap);
-
 /**
 
   \ingroup link
@@ -2103,20 +2094,6 @@ HPDF_3DAnnotExData_Set3DMeasurement  (HPDF_ExData      exdata,
                                       HPDF_3DMeasure   measure);
 
 /*--------------------------------------------------------------------------*/
-/*--------------------------------------------------------------------------*/
-/*----- 3D View ---------------------------------------------------------*/
-
-HPDF_EXPORT(HPDF_Dict)
-HPDF_Page_Create3DView  (HPDF_Page         page,
-                         HPDF_U3D          u3d,
-                         HPDF_Annotation   annot3d,
-                         const char       *name);
-
-HPDF_EXPORT(HPDF_STATUS)
-HPDF_3DView_Add3DC3DMeasure  (HPDF_Dict        view,
-                              HPDF_3DMeasure   measure);
-
-/*--------------------------------------------------------------------------*/
 /*----- image data ---------------------------------------------------------*/
 
 /**
@@ -2240,15 +2217,6 @@ HPDF_EXPORT(HPDF_Image)
 HPDF_LoadJpegImageFromMem   (HPDF_Doc      pdf,
                       const HPDF_BYTE     *buf,
                             HPDF_UINT      size);
-
-HPDF_EXPORT(HPDF_Image)
-HPDF_LoadU3DFromFile (HPDF_Doc     pdf,
-                    const char    *filename);
-
-HPDF_EXPORT(HPDF_Image)
-HPDF_LoadU3DFromMem  (HPDF_Doc      pdf,
-               const HPDF_BYTE     *buffer,
-                     HPDF_UINT      size);
 
 HPDF_EXPORT(HPDF_Image)
 HPDF_Image_LoadRaw1BitImageFromMem ( HPDF_Doc          pdf,

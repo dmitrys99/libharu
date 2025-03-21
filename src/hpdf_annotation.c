@@ -441,98 +441,6 @@ HPDF_LinkAnnot_SetHighlightMode  (HPDF_Annotation           annot,
     return ret;
 }
 
-
-HPDF_Annotation
-HPDF_3DAnnot_New    (HPDF_MMgr        mmgr,
-                     HPDF_Xref        xref,
-                     HPDF_Rect        rect,
-                     HPDF_BOOL        tb,
-                     HPDF_BOOL        np,
-                     HPDF_U3D         u3d,
-                     HPDF_Image       ap)
-{
-    HPDF_Annotation annot;
-    HPDF_Dict action, appearance, stream;
-    HPDF_STATUS ret;
-
-    HPDF_PTRACE((" HPDF_3DAnnot_New\n"));
-
-    annot = HPDF_Annotation_New (mmgr, xref, HPDF_ANNOT_3D, rect);
-    if (!annot) {
-        return NULL;
-    }
-
-    // include the flags
-    HPDF_Dict_AddNumber (annot, "F", 68);
-    //Bit 3:Print If set, print the annotation when the page is printed.
-    //Bit 7:If set, do not allow the annotation to interact with the user.
-    //      The annotation may be displayed or printed (depending on the settings of the NoView and Print flags)
-    //      but should not respond to mouse clicks or change its appearance in response to mouse motions.
-
-    HPDF_Dict_Add(annot, "Contents", HPDF_String_New (mmgr, "3D Model", NULL));
-
-    action = HPDF_Dict_New (mmgr);
-    if (!action) {
-        return NULL;
-    }
-
-    ret = HPDF_Dict_Add (annot, "3DA", action);
-    if (ret != HPDF_OK) {
-        return NULL;
-    }
-
-    // enable visibility on page open
-    ret += HPDF_Dict_AddName (action, "A", "PO");
-
-    // enable visibility of ToolBar
-    ret += HPDF_Dict_AddBoolean(action, "TB", tb);
-
-    // enable visibility of Navigation Panel
-    ret += HPDF_Dict_AddBoolean(action, "NP", np);
-
-    // Set behavior of Annotation on Disabling
-    ret += HPDF_Dict_AddName(action, "DIS", "U");
-
-    // Set behavior of Annotation upon activation
-    ret += HPDF_Dict_AddName(action, "AIS", "L");
-
-    if (ret != HPDF_OK) {
-        return NULL;
-    }
-
-    if (HPDF_Dict_Add (annot, "3DD", u3d) != HPDF_OK) {
-        return NULL;
-    }
-
-    appearance = HPDF_Dict_New (mmgr);
-    if (!appearance) {
-        return NULL;
-    }
-
-    ret = HPDF_Dict_Add (annot, "AP", appearance);
-    if (ret != HPDF_OK) {
-        return NULL;
-    }
-
-    if (ap) {
-        if (HPDF_Dict_Add (appearance, "N", ap) != HPDF_OK)
-            return NULL;
-    }
-    else {
-        stream = HPDF_Dict_New (mmgr);
-        if (!stream) {
-            return NULL;
-        }
-        ret = HPDF_Dict_Add (appearance, "N", stream);
-    }
-
-    if (ret != HPDF_OK) {
-        return NULL;
-    }
-
-    return annot;
-}
-
 HPDF_Annotation
 HPDF_MarkupAnnot_New (HPDF_MMgr      mmgr,
                      HPDF_Xref       xref,
@@ -1254,6 +1162,99 @@ HPDF_ProjectionAnnot_SetExData(HPDF_Annotation annot, HPDF_ExData exdata)
     return ret;
 }
 
+#ifdef LIBHPDF_U3D_SUPPORT
+
+HPDF_Annotation
+HPDF_3DAnnot_New    (HPDF_MMgr        mmgr,
+                     HPDF_Xref        xref,
+                     HPDF_Rect        rect,
+                     HPDF_BOOL        tb,
+                     HPDF_BOOL        np,
+                     HPDF_U3D         u3d,
+                     HPDF_Image       ap)
+{
+    HPDF_Annotation annot;
+    HPDF_Dict action, appearance, stream;
+    HPDF_STATUS ret;
+
+    HPDF_PTRACE((" HPDF_3DAnnot_New\n"));
+
+    annot = HPDF_Annotation_New (mmgr, xref, HPDF_ANNOT_3D, rect);
+    if (!annot) {
+        return NULL;
+    }
+
+    // include the flags
+    HPDF_Dict_AddNumber (annot, "F", 68);
+    //Bit 3:Print If set, print the annotation when the page is printed.
+    //Bit 7:If set, do not allow the annotation to interact with the user.
+    //      The annotation may be displayed or printed (depending on the settings of the NoView and Print flags)
+    //      but should not respond to mouse clicks or change its appearance in response to mouse motions.
+
+    HPDF_Dict_Add(annot, "Contents", HPDF_String_New (mmgr, "3D Model", NULL));
+
+    action = HPDF_Dict_New (mmgr);
+    if (!action) {
+        return NULL;
+    }
+
+    ret = HPDF_Dict_Add (annot, "3DA", action);
+    if (ret != HPDF_OK) {
+        return NULL;
+    }
+
+    // enable visibility on page open
+    ret += HPDF_Dict_AddName (action, "A", "PO");
+
+    // enable visibility of ToolBar
+    ret += HPDF_Dict_AddBoolean(action, "TB", tb);
+
+    // enable visibility of Navigation Panel
+    ret += HPDF_Dict_AddBoolean(action, "NP", np);
+
+    // Set behavior of Annotation on Disabling
+    ret += HPDF_Dict_AddName(action, "DIS", "U");
+
+    // Set behavior of Annotation upon activation
+    ret += HPDF_Dict_AddName(action, "AIS", "L");
+
+    if (ret != HPDF_OK) {
+        return NULL;
+    }
+
+    if (HPDF_Dict_Add (annot, "3DD", u3d) != HPDF_OK) {
+        return NULL;
+    }
+
+    appearance = HPDF_Dict_New (mmgr);
+    if (!appearance) {
+        return NULL;
+    }
+
+    ret = HPDF_Dict_Add (annot, "AP", appearance);
+    if (ret != HPDF_OK) {
+        return NULL;
+    }
+
+    if (ap) {
+        if (HPDF_Dict_Add (appearance, "N", ap) != HPDF_OK)
+            return NULL;
+    }
+    else {
+        stream = HPDF_Dict_New (mmgr);
+        if (!stream) {
+            return NULL;
+        }
+        ret = HPDF_Dict_Add (appearance, "N", stream);
+    }
+
+    if (ret != HPDF_OK) {
+        return NULL;
+    }
+
+    return annot;
+}
+
 HPDF_EXPORT(HPDF_Annotation)
 HPDF_Page_Create3DAnnot    (HPDF_Page       page,
                             HPDF_Rect       rect,
@@ -1283,6 +1284,8 @@ HPDF_Page_Create3DAnnot    (HPDF_Page       page,
 
     return annot;
 }
+
+#endif /* LIBHPDF_U3D_SUPPORT */
 
 HPDF_EXPORT(HPDF_Annotation)
 HPDF_Page_CreateTextAnnot  (HPDF_Page          page,
