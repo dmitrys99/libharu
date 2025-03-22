@@ -18,7 +18,6 @@
 #include "hpdf_conf.h"
 #include "hpdf_utils.h"
 #include "hpdf.h"
-//#include "hpdf_annotation.h"
 #include "hpdf_destination.h"
 
 /*----------------------------------------------------------------------------*/

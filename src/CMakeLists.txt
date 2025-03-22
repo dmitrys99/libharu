@@ -8,7 +8,6 @@
 # =======================================================================
 set(
     LIBHPDF_SRCS
-    hpdf_annotation.c
     hpdf_array.c
     hpdf_binary.c
     hpdf_boolean.c
@@ -84,7 +83,13 @@ set(LIBHPDF_SRCS
 )
 endif()
 
+if (LIBHPDF_ANNOTATIONS_SUPPORT)
 
+set(LIBHPDF_SRCS
+    ${LIBHPDF_SRCS}
+    hpdf_annotation.c
+)
+endif()
 
 set_property(SOURCE hpdf_shading.c hpdf_font_tt.c hpdf_fontdef_tt.c
   PROPERTY
