@@ -26,6 +26,8 @@
 #include "hpdf_pdfa.h"
 #include "hpdf.h"
 
+#include "internal/hpdf_doc_internal.h"
+
 
 #define HEADER                   "<?xpacket begin='' id='W5M0MpCehiHzreSzNTczkc9d'?><x:xmpmeta xmlns:x='adobe:ns:meta/' x:xmptk='XMP toolkit 2.9.1-13, framework 1.6'><rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:iX='http://ns.adobe.com/iX/1.0/'>"
 #define DC_HEADER                "<rdf:Description xmlns:dc='http://purl.org/dc/elements/1.1/' rdf:about=''>"

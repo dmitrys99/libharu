@@ -22,6 +22,8 @@
 #include "hpdf_encoder.h"
 #include "hpdf.h"
 
+#include "internal/hpdf_doc_internal.h"
+
 typedef struct _UTF8_EncoderAttr_Rec  *UTF8_EncoderAttr;
 typedef struct  _UTF8_EncoderAttr_Rec {
       HPDF_BYTE           current_byte;

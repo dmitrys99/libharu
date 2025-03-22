@@ -20,6 +20,8 @@
 #include "hpdf.h"
 #include "hpdf_destination.h"
 
+#include "internal/hpdf_doc_internal.h"
+
 /*----------------------------------------------------------------------------*/
 
 static HPDF_STATUS
