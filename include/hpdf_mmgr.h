@@ -25,15 +25,8 @@
 extern "C" {
 #endif
 
+struct  _HPDF_MPool_Node_Rec;
 typedef struct  _HPDF_MPool_Node_Rec  *HPDF_MPool_Node;
-
-typedef struct  _HPDF_MPool_Node_Rec {
-    HPDF_BYTE*       buf;
-    HPDF_UINT        size;
-    HPDF_UINT        used_size;
-    HPDF_MPool_Node  next_node;
-} HPDF_MPool_Node_Rec;
-
 
 typedef struct  _HPDF_MMgr_Rec  *HPDF_MMgr;
 
