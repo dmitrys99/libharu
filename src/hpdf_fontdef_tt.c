@@ -19,7 +19,7 @@
 #include "hpdf_conf.h"
 #include "hpdf_utils.h"
 #include "hpdf_fontdef.h"
-
+#include "internal/hpdf_fontdef_internal.h"
 
 #define HPDF_TTF_MAX_MEM_SIZ    10000
 
@@ -158,7 +158,7 @@ static HPDF_STATUS
 ParseOS2  (HPDF_FontDef  fontdef);
 
 
-static HPDF_TTFTable*
+static HPDF_TTF_Table*
 FindTable (HPDF_FontDef   fontdef,
            const char    *tag);
 
@@ -347,7 +347,7 @@ DumpTable (HPDF_FontDef   fontdef)
 
     for (i = 0; i < HPDF_REQUIRED_TAGS_COUNT; i++) {
         char fname[9];
-        HPDF_TTFTable *tbl = FindTable (fontdef, REQUIRED_TAGS[i]);
+        HPDF_TTF_Table *tbl = FindTable (fontdef, REQUIRED_TAGS[i]);
 
         if (!tbl) {
             HPDF_PTRACE ((" ERR: cannot seek %s\n", fname));
@@ -413,7 +413,7 @@ LoadFontData (HPDF_FontDef  fontdef,
 {
     HPDF_TTFontDefAttr attr = (HPDF_TTFontDefAttr)fontdef->attr;
     HPDF_STATUS ret;
-    HPDF_TTFTable *tbl;
+    HPDF_TTF_Table *tbl;
 
     HPDF_PTRACE ((" HPDF_TTFontDef_LoadFontData\n"));
 
@@ -695,7 +695,7 @@ LoadTTFTable (HPDF_FontDef  fontdef)
     HPDF_TTFontDefAttr attr = (HPDF_TTFontDefAttr)fontdef->attr;
     HPDF_STATUS ret = HPDF_OK;
     HPDF_INT i;
-    HPDF_TTFTable *tbl;
+    HPDF_TTF_Table *tbl;
 
     HPDF_PTRACE ((" HPDF_TTFontDef_LoadTTFTable\n"));
 
@@ -708,12 +708,12 @@ LoadTTFTable (HPDF_FontDef  fontdef)
     if (ret != HPDF_OK)
         return HPDF_Error_GetCode (fontdef->error);
 
-    if (attr->offset_tbl.num_tables * sizeof(HPDF_TTFTable) >
+    if (attr->offset_tbl.num_tables * sizeof(HPDF_TTF_Table) >
             HPDF_TTF_MAX_MEM_SIZ)
         return HPDF_SetError (fontdef->error, HPDF_TTF_INVALID_FOMAT, 0);
 
     attr->offset_tbl.table = HPDF_GetMem (fontdef->mmgr,
-                        sizeof(HPDF_TTFTable) * attr->offset_tbl.num_tables);
+                        sizeof(HPDF_TTF_Table) * attr->offset_tbl.num_tables);
     if (!attr->offset_tbl.table)
         return HPDF_Error_GetCode (fontdef->error);
 
@@ -745,7 +745,7 @@ static HPDF_STATUS
 ParseHead (HPDF_FontDef  fontdef)
 {
     HPDF_TTFontDefAttr attr = (HPDF_TTFontDefAttr)fontdef->attr;
-    HPDF_TTFTable *tbl = FindTable (fontdef, "head");
+    HPDF_TTF_Table *tbl = FindTable (fontdef, "head");
     HPDF_STATUS ret;
     HPDF_UINT siz;
 
@@ -802,7 +802,7 @@ static HPDF_STATUS
 ParseMaxp (HPDF_FontDef  fontdef)
 {
     HPDF_TTFontDefAttr attr = (HPDF_TTFontDefAttr)fontdef->attr;
-    HPDF_TTFTable *tbl = FindTable (fontdef, "maxp");
+    HPDF_TTF_Table *tbl = FindTable (fontdef, "maxp");
     HPDF_STATUS ret;
 
     HPDF_PTRACE ((" HPDF_TTFontDef_ParseMaxp\n"));
@@ -827,7 +827,7 @@ static HPDF_STATUS
 ParseHhea (HPDF_FontDef  fontdef)
 {
     HPDF_TTFontDefAttr attr = (HPDF_TTFontDefAttr)fontdef->attr;
-    HPDF_TTFTable *tbl = FindTable (fontdef, "hhea");
+    HPDF_TTF_Table *tbl = FindTable (fontdef, "hhea");
     HPDF_STATUS ret;
 
     HPDF_PTRACE ((" HPDF_TTFontDef_ParseHhea\n"));
@@ -868,7 +868,7 @@ static HPDF_STATUS
 ParseCMap (HPDF_FontDef  fontdef)
 {
     HPDF_TTFontDefAttr attr = (HPDF_TTFontDefAttr)fontdef->attr;
-    HPDF_TTFTable *tbl = FindTable (fontdef, "cmap");
+    HPDF_TTF_Table *tbl = FindTable (fontdef, "cmap");
     HPDF_STATUS ret;
     HPDF_UINT16 version;
     HPDF_UINT16 num_cmap;
@@ -1362,7 +1362,7 @@ static HPDF_STATUS
 ParseHmtx  (HPDF_FontDef  fontdef)
 {
     HPDF_TTFontDefAttr attr = (HPDF_TTFontDefAttr)fontdef->attr;
-    HPDF_TTFTable *tbl = FindTable (fontdef, "hmtx");
+    HPDF_TTF_Table *tbl = FindTable (fontdef, "hmtx");
     HPDF_STATUS ret;
     HPDF_UINT i;
     HPDF_UINT16 save_aw = 0;
@@ -1420,7 +1420,7 @@ static HPDF_STATUS
 ParseLoca  (HPDF_FontDef  fontdef)
 {
     HPDF_TTFontDefAttr attr = (HPDF_TTFontDefAttr)fontdef->attr;
-    HPDF_TTFTable *tbl = FindTable (fontdef, "loca");
+    HPDF_TTF_Table *tbl = FindTable (fontdef, "loca");
     HPDF_STATUS ret;
     HPDF_UINT i;
     HPDF_UINT32 *poffset;
@@ -1528,7 +1528,7 @@ static HPDF_STATUS
 ParseName  (HPDF_FontDef  fontdef)
 {
     HPDF_TTFontDefAttr attr = (HPDF_TTFontDefAttr)fontdef->attr;
-    HPDF_TTFTable *tbl = FindTable (fontdef, "name");
+    HPDF_TTF_Table *tbl = FindTable (fontdef, "name");
     HPDF_STATUS ret;
     HPDF_UINT i;
     HPDF_TTF_NameRecord *name_rec;
@@ -1700,7 +1700,7 @@ static HPDF_STATUS
 ParseOS2  (HPDF_FontDef  fontdef)
 {
     HPDF_TTFontDefAttr attr = (HPDF_TTFontDefAttr)fontdef->attr;
-    HPDF_TTFTable *tbl = FindTable (fontdef, "OS/2");
+    HPDF_TTF_Table *tbl = FindTable (fontdef, "OS/2");
     HPDF_STATUS ret;
     HPDF_UINT16 version;
     HPDF_UINT len;
@@ -1872,7 +1872,7 @@ RecreateName  (HPDF_FontDef   fontdef,
                HPDF_Stream    stream)
 {
     HPDF_TTFontDefAttr attr = (HPDF_TTFontDefAttr)fontdef->attr;
-    HPDF_TTFTable *tbl = FindTable (fontdef, "name");
+    HPDF_TTF_Table *tbl = FindTable (fontdef, "name");
     HPDF_STATUS ret = HPDF_OK;
     HPDF_UINT i;
     HPDF_TTF_NameRecord *name_rec;
@@ -2011,7 +2011,7 @@ HPDF_TTFontDef_SaveFontData  (HPDF_FontDef   fontdef,
                               HPDF_Stream    stream)
 {
     HPDF_TTFontDefAttr attr = (HPDF_TTFontDefAttr)fontdef->attr;
-    HPDF_TTFTable tmp_tbl[HPDF_REQUIRED_TAGS_COUNT];
+    HPDF_TTF_Table tmp_tbl[HPDF_REQUIRED_TAGS_COUNT];
     HPDF_Stream tmp_stream;
     HPDF_UINT32 *new_offsets;
     HPDF_UINT i;
@@ -2019,7 +2019,7 @@ HPDF_TTFontDef_SaveFontData  (HPDF_FontDef   fontdef,
     HPDF_STATUS ret;
     HPDF_UINT32 offset_base;
     HPDF_UINT32 tmp_check_sum = 0xB1B0AFBA;
-    HPDF_TTFTable emptyTable;
+    HPDF_TTF_Table emptyTable;
     emptyTable.length = 0;
     emptyTable.offset = 0;
 
@@ -2048,7 +2048,7 @@ HPDF_TTFontDef_SaveFontData  (HPDF_FontDef   fontdef,
     }
 
     for (i = 0; i < HPDF_REQUIRED_TAGS_COUNT; i++) {
-        HPDF_TTFTable *tbl = FindTable (fontdef, REQUIRED_TAGS[i]);
+        HPDF_TTF_Table *tbl = FindTable (fontdef, REQUIRED_TAGS[i]);
         HPDF_UINT32 length;
         HPDF_UINT new_offset;
         HPDF_UINT32 *poffset;
@@ -2172,7 +2172,7 @@ HPDF_TTFontDef_SaveFontData  (HPDF_FontDef   fontdef,
 
     /* recalcurate checksum */
     for (i = 0; i < HPDF_REQUIRED_TAGS_COUNT; i++) {
-        HPDF_TTFTable tbl = tmp_tbl[i];
+        HPDF_TTF_Table tbl = tmp_tbl[i];
         HPDF_UINT32 buf;
         HPDF_UINT length = tbl.length;
 
@@ -2300,12 +2300,12 @@ PdfTTFontDef::GetNameAttr(unsigned char* buf, HPDF_UINT name_id,
 
 */
 
-static HPDF_TTFTable*
+static HPDF_TTF_Table*
 FindTable (HPDF_FontDef      fontdef,
            const char  *tag)
 {
     HPDF_TTFontDefAttr attr = (HPDF_TTFontDefAttr)fontdef->attr;
-    HPDF_TTFTable* tbl = attr->offset_tbl.table;
+    HPDF_TTF_Table* tbl = attr->offset_tbl.table;
     HPDF_UINT i;
 
     for (i = 0; i < attr->offset_tbl.num_tables; i++, tbl++) {

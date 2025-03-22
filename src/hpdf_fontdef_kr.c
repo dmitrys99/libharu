@@ -20,6 +20,7 @@
 #include "hpdf.h"
 
 #include "internal/hpdf_doc_internal.h"
+#include "internal/hpdf_fontdef_internal.h"
 
 /*----------------------------------------------------------------------------*/
 

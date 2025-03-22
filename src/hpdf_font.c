@@ -18,6 +18,7 @@
 #include "hpdf_conf.h"
 #include "hpdf_utils.h"
 #include "hpdf.h"
+#include "internal/hpdf_fontdef_internal.h"
 
 
 HPDF_EXPORT(HPDF_TextWidth)

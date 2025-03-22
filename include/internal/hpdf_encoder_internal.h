@@ -28,14 +28,11 @@ typedef HPDF_STATUS
 (*HPDF_Encoder_Write_Func)  (HPDF_Encoder  encoder,
                              HPDF_Stream   out);
 
-
 typedef HPDF_STATUS
 (*HPDF_Encoder_Init_Func)  (HPDF_Encoder  encoder);
 
-
 typedef void
 (*HPDF_Encoder_Free_Func)  (HPDF_Encoder  encoder);
-
 
 typedef struct  _HPDF_Encoder_Rec {
     HPDF_UINT32                     sig_bytes;
