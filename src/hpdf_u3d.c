@@ -19,6 +19,8 @@
 #include "hpdf.h"
 #include "hpdf_u3d.h"
 
+#include "internal/hpdf_doc_internal.h"
+
 #include <string.h>
 
 HPDF_EXPORT(HPDF_Dict)

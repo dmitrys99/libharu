@@ -19,6 +19,8 @@
 #include "hpdf_utils.h"
 #include "hpdf.h"
 
+#include "internal/hpdf_doc_internal.h"
+
 /*----------------------------------------------------------------------------*/
 
 static const HPDF_CID_Width DotumChe_W_ARRAY[] = {
