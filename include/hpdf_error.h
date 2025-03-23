@@ -187,16 +187,8 @@ extern "C" {
 
 /*---------------------------------------------------------------------------*/
 /*----- HPDF_Error ----------------------------------------------------------*/
-
-typedef struct  _HPDF_Error_Rec  *HPDF_Error;
-
-typedef struct  _HPDF_Error_Rec {
-    HPDF_STATUS             error_no;
-    HPDF_STATUS             detail_no;
-    HPDF_Error_Handler      error_fn;
-    void                    *user_data;
-} HPDF_Error_Rec;
-
+struct _HPDF_Error_Rec;
+typedef struct _HPDF_Error_Rec *HPDF_Error;
 
 /*  HPDF_Error_init
  *

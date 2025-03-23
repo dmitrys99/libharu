@@ -19,6 +19,7 @@
 #include "hpdf_utils.h"
 #include "hpdf_image.h"
 #include "internal/hpdf_mmgr_internal.h"
+#include "internal/hpdf_error_internal.h"
 
 #ifdef LIBHPDF_HAVE_LIBPNG
 #include <png.h>

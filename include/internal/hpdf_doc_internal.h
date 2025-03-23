@@ -2,6 +2,7 @@
 #define _HPDF_DOC_INTERNAL_H
 
 #include "hpdf_types.h"
+#include "internal/hpdf_error_internal.h"
 
 typedef struct _HPDF_Doc_Rec {
     HPDF_UINT32     sig_bytes;
