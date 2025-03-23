@@ -18,6 +18,7 @@
 #include "hpdf_conf.h"
 #include "hpdf_utils.h"
 #include "hpdf.h"
+#include "internal/hpdf_mmgr_internal.h"
 
 static const char *COL_CMYK = "DeviceCMYK";
 static const char *COL_RGB = "DeviceRGB";

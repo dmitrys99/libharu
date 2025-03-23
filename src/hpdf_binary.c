@@ -18,7 +18,7 @@
 #include "hpdf_conf.h"
 #include "hpdf_utils.h"
 #include "hpdf_objects.h"
-
+#include "internal/hpdf_mmgr_internal.h"
 
 HPDF_Binary
 HPDF_Binary_New  (HPDF_MMgr  mmgr,

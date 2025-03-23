@@ -29,6 +29,7 @@
 #include "hpdf_consts.h"
 #include "hpdf_utils.h"
 #include "hpdf_streams.h"
+#include "internal/hpdf_mmgr_internal.h"
 
 #ifdef LIBHPDF_HAVE_ZLIB
 #include <zlib.h>

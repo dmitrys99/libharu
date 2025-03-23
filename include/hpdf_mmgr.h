@@ -28,21 +28,8 @@ extern "C" {
 struct  _HPDF_MPool_Node_Rec;
 typedef struct  _HPDF_MPool_Node_Rec  *HPDF_MPool_Node;
 
+struct  _HPDF_MMgr_Rec;
 typedef struct  _HPDF_MMgr_Rec  *HPDF_MMgr;
-
-typedef struct  _HPDF_MMgr_Rec {
-    HPDF_Error        error;
-    HPDF_Alloc_Func   alloc_fn;
-    HPDF_Free_Func    free_fn;
-    HPDF_MPool_Node   mpool;
-    HPDF_UINT         buf_size;
-
-#ifdef HPDF_MEM_DEBUG
-    HPDF_UINT         alloc_cnt;
-    HPDF_UINT         free_cnt;
-#endif
-} HPDF_MMgr_Rec;
-
 
 /*  HPDF_mpool_new
  *

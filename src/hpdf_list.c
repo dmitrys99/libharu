@@ -19,6 +19,7 @@
 #include "hpdf_utils.h"
 #include "hpdf_consts.h"
 #include "hpdf_list.h"
+#include "internal/hpdf_mmgr_internal.h"
 
 static HPDF_STATUS
 Resize  (HPDF_List  list,

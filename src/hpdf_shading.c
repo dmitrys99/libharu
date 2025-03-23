@@ -22,6 +22,7 @@
 #include "assert.h"
 
 #include "internal/hpdf_doc_internal.h"
+#include "internal/hpdf_mmgr_internal.h"
 
 typedef struct _RGBVertex
 {

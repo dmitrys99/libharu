@@ -18,6 +18,7 @@
 #include "hpdf_conf.h"
 #include "hpdf_utils.h"
 #include "hpdf_objects.h"
+#include "internal/hpdf_mmgr_internal.h"
 
 HPDF_Array
 HPDF_Array_New  (HPDF_MMgr  mmgr)
