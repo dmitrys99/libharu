@@ -1,6 +1,8 @@
 #ifndef _HPDF_ENCODER_INTERNAL_H
 #define _HPDF_ENCODER_INTERNAL_H
 
+#include "hpdf_encoder.h"
+
 typedef struct _HPDF_ParseText_Rec {
     const HPDF_BYTE  *text;
     HPDF_UINT        index;
@@ -28,9 +30,6 @@ typedef HPDF_STATUS
 (*HPDF_Encoder_Write_Func)  (HPDF_Encoder  encoder,
                              HPDF_Stream   out);
 
-typedef HPDF_STATUS
-(*HPDF_Encoder_Init_Func)  (HPDF_Encoder  encoder);
-
 typedef void
 (*HPDF_Encoder_Free_Func)  (HPDF_Encoder  encoder);
 
@@ -52,9 +51,9 @@ typedef struct  _HPDF_Encoder_Rec {
     char                         country_code[3];
     */
     void                            *attr;
-}  HPDF_Encoder_Rec;
-typedef HPDF_BOOL
+} HPDF_Encoder_Rec;
 
+typedef HPDF_BOOL
 (*HPDF_CMapEncoder_ByteType_Func)  (HPDF_Encoder  encoder,
                                     HPDF_BYTE     b);
 

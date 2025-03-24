@@ -23,6 +23,7 @@
 #include "hpdf.h"
 
 #include "internal/hpdf_doc_internal.h"
+#include "internal/hpdf_encoder_internal.h"
 
 typedef struct _UTF8_EncoderAttr_Rec  *UTF8_EncoderAttr;
 typedef struct  _UTF8_EncoderAttr_Rec {

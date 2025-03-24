@@ -21,8 +21,6 @@
 #include "hpdf_consts.h"
 #include "hpdf_streams.h"
 
-#include "internal/hpdf_encoder_internal.h"
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -71,10 +69,22 @@ extern "C" {
 struct _HPDF_Encoder_Rec;
 struct _HPDF_BasicEncoderAttr_Rec;
 struct _HPDF_CMapEncoderAttr_Rec;
+struct _HPDF_CidRange_Rec;
+struct _HPDF_ParseText_Rec;
+struct _HPDF_UnicodeMap_Rec;
+struct _HPDF_Encoder_Rec;
 
-typedef struct _HPDF_BasicEncoderAttr_Rec  *HPDF_BasicEncoderAttr;
+typedef struct _HPDF_BasicEncoderAttr_Rec *HPDF_BasicEncoderAttr;
 typedef struct _HPDF_CMapEncoderAttr_Rec  *HPDF_CMapEncoderAttr;
-typedef struct _HPDF_Encoder_Rec *HPDF_Encoder;
+
+typedef struct _HPDF_Encoder_Rec    HPDF_Encoder_Rec;
+typedef struct _HPDF_Encoder_Rec    *HPDF_Encoder;
+typedef struct _HPDF_ParseText_Rec  HPDF_ParseText_Rec;
+typedef struct _HPDF_CidRange_Rec   HPDF_CidRange_Rec;
+typedef struct _HPDF_UnicodeMap_Rec HPDF_UnicodeMap_Rec;
+
+typedef HPDF_STATUS
+(*HPDF_Encoder_Init_Func)  (HPDF_Encoder  encoder);
 
 typedef enum _HPDF_EncodingType {
     HPDF_STANDARD_ENCODING = 0,

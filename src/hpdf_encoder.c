@@ -21,6 +21,7 @@
 #include "hpdf.h"
 #include "internal/hpdf_mmgr_internal.h"
 #include "internal/hpdf_error_internal.h"
+#include "internal/hpdf_encoder_internal.h"
 
 typedef struct _HPDF_UnicodeGryphPair {
     HPDF_UNICODE     unicode;

@@ -21,6 +21,7 @@
 #include "internal/hpdf_fontdef_internal.h"
 #include "internal/hpdf_mmgr_internal.h"
 #include "internal/hpdf_font_internal.h"
+#include "internal/hpdf_encoder_internal.h"
 
 static HPDF_STATUS
 Type1Font_OnWrite  (HPDF_Dict    obj,
