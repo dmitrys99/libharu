@@ -21,8 +21,6 @@
 #include "hpdf_gstate.h"
 #include "hpdf_ext_gstate.h"
 
-#include "internal/hpdf_pages_internal.h"
-
 #ifdef __cplusplus
 extern "C" {
 #endif

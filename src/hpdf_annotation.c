@@ -22,6 +22,8 @@
 #include "hpdf_destination.h"
 #include "hpdf.h"
 
+#include "internal/hpdf_pages_internal.h"
+
 static const char * const HPDF_ANNOT_TYPE_NAMES[] = {
                                         "Text",
                                         "Link",

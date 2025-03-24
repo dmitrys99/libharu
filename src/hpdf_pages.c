@@ -21,6 +21,7 @@
 #include "hpdf_destination.h"
 
 #include "internal/hpdf_doc_internal.h"
+#include "internal/hpdf_pages_internal.h"
 
 /*----------------------------------------------------------------------------*/
 

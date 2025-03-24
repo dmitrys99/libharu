@@ -21,6 +21,7 @@
 
 #include "internal/hpdf_doc_internal.h"
 #include "internal/hpdf_streams_internal.h"
+#include "internal/hpdf_pages_internal.h"
 
 #include <string.h>
 
