@@ -17,8 +17,9 @@
 
 #include "hpdf_conf.h"
 #include "hpdf_utils.h"
-#include "hpdf_font.h"
 #include "internal/hpdf_fontdef_internal.h"
+#include "internal/hpdf_font_internal.h"
+#include "internal/hpdf_mmgr_internal.h"
 
 static HPDF_Font
 CIDFontType0_New (HPDF_Font parent,

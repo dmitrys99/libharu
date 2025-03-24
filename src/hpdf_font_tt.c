@@ -19,6 +19,7 @@
 #include "hpdf_utils.h"
 #include "hpdf_font.h"
 #include "internal/hpdf_fontdef_internal.h"
+#include "internal/hpdf_font_internal.h"
 
 static HPDF_STATUS
 OnWrite  (HPDF_Dict    obj,

@@ -16,7 +16,6 @@ set(
     hpdf_dict.c
     hpdf_direct.c
     hpdf_doc_png.c
-    hpdf_doc.c
     hpdf_encoder_utf.c
     hpdf_encoder.c
     hpdf_encrypt.c
@@ -32,6 +31,7 @@ set(
     hpdf_fontdef_tt.c
     hpdf_fontdef_type1.c
     hpdf_fontdef.c
+    hpdf_doc.c
     hpdf_gstate.c
     hpdf_image_ccitt.c
     hpdf_image_png.c

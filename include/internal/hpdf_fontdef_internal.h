@@ -1,5 +1,9 @@
-#ifndef HPDF_ENCODER_INTERNAL_H
-#define HPDF_ENCODER_INTERNAL_H
+#ifndef HPDF_FONTDEF_INTERNAL_H
+#define HPDF_FONTDEF_INTERNAL_H
+
+#include "hpdf_consts.h"
+#include "hpdf_objects.h"
+#include "internal/hpdf_mmgr_internal.h"
 
 typedef struct _HPDF_CharData {
     HPDF_INT16     char_cd;
@@ -207,4 +211,4 @@ typedef struct _HPDF_CIDFontDefAttrRec {
 } HPDF_CIDFontDefAttr_Rec;
 
 
-#endif /* HPDF_ENCODER_INTERNAL_H */
+#endif /* HPDF_FONTDEF_INTERNAL_H */

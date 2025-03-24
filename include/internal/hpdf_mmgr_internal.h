@@ -1,6 +1,8 @@
 #ifndef HPDF_MMGR_INTERNAL_H
 #define HPDF_MMGR_INTERNAL_H
 
+#include "hpdf_mmgr.h"
+
 typedef struct  _HPDF_MPool_Node_Rec {
     HPDF_BYTE*       buf;
     HPDF_UINT        size;
