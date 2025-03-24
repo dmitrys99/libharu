@@ -31,6 +31,7 @@
 #include "hpdf_streams.h"
 #include "internal/hpdf_mmgr_internal.h"
 #include "internal/hpdf_streams_internal.h"
+#include "internal/hpdf_list_internal.h"
 
 #ifdef LIBHPDF_HAVE_ZLIB
 #include <zlib.h>

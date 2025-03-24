@@ -27,11 +27,13 @@
 #include "hpdf_pdfa.h"
 #include "hpdf_utils.h"
 #include "hpdf_version.h"
+
 #include "internal/hpdf_doc_internal.h"
 #include "internal/hpdf_fontdef_internal.h"
 #include "internal/hpdf_mmgr_internal.h"
 #include "internal/hpdf_font_internal.h"
 #include "internal/hpdf_encoder_internal.h"
+#include "internal/hpdf_list_internal.h"
 
 static const char * const HPDF_VERSION_STR[] = {
                 "%PDF-1.2\012%\267\276\255\252\012",

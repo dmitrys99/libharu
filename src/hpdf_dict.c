@@ -20,6 +20,7 @@
 #include "hpdf_objects.h"
 #include "internal/hpdf_mmgr_internal.h"
 #include "internal/hpdf_streams_internal.h"
+#include "internal/hpdf_list_internal.h"
 
 HPDF_DictElement
 GetElement  (HPDF_Dict      dict,

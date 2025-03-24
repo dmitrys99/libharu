@@ -19,6 +19,7 @@
 #include "hpdf_utils.h"
 #include "hpdf.h"
 #include "internal/hpdf_mmgr_internal.h"
+#include "internal/hpdf_list_internal.h"
 
 const char * const HPDF_DESTINATION_TYPE_NAMES[] = {
         "XYZ",
