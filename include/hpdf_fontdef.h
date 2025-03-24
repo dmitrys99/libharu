@@ -64,9 +64,6 @@ typedef struct _HPDF_FontDef_Rec  *HPDF_FontDef;
 struct _HPDF_CharData;
 typedef struct _HPDF_CharData HPDF_CharData;
 
-struct _HPDF_TTF_Table;
-typedef struct _HPDF_TTF_Table HPDF_TTF_Table;
-
 void
 HPDF_FontDef_Free  (HPDF_FontDef  fontdef);
 
