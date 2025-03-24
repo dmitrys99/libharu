@@ -19,6 +19,7 @@
 #include "hpdf_utils.h"
 #include "hpdf_pages.h"
 #include "hpdf.h"
+#include "internal/hpdf_font_internal.h"
 
 static const HPDF_Point INIT_POS = {0, 0};
 static const HPDF_DashMode INIT_MODE = {{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f}, 0, 0.0f};

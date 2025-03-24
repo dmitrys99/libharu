@@ -21,6 +21,8 @@
 #include "hpdf_gstate.h"
 #include "hpdf_ext_gstate.h"
 
+#include "internal/hpdf_pages_internal.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -47,28 +49,8 @@ HPDF_STATUS
 HPDF_Page_InsertBefore  (HPDF_Page   page,
                          HPDF_Page   target);
 
-
+struct _HPDF_PageAttr_Rec;
 typedef struct _HPDF_PageAttr_Rec  *HPDF_PageAttr;
-
-typedef struct _HPDF_PageAttr_Rec {
-    HPDF_Pages         parent;
-    HPDF_Dict          fonts;
-    HPDF_Dict          xobjects;
-    HPDF_Dict          ext_gstates;
-    HPDF_Dict          shadings;
-    HPDF_GState        gstate;
-    HPDF_Point         str_pos;
-    HPDF_Point         cur_pos;
-    HPDF_Point         text_pos;
-    HPDF_TransMatrix   text_matrix;
-    HPDF_UINT16        gmode;
-    HPDF_Dict          contents;
-    HPDF_Stream        stream;
-    HPDF_Xref          xref;
-    HPDF_UINT          compression_mode;
-    HPDF_PDFVer       *ver;
-} HPDF_PageAttr_Rec;
-
 
 /*----------------------------------------------------------------------------*/
 /*----- HPDF_Page ------------------------------------------------------------*/
