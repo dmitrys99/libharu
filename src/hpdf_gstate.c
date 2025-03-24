@@ -19,7 +19,9 @@
 #include "hpdf_utils.h"
 #include "hpdf_gstate.h"
 #include "hpdf_consts.h"
+
 #include "internal/hpdf_mmgr_internal.h"
+#include "internal/hpdf_gstate_internal.h"
 
 
 HPDF_GState
