@@ -27,6 +27,7 @@
 #include "hpdf.h"
 
 #include "internal/hpdf_doc_internal.h"
+#include "internal/hpdf_streams_internal.h"
 
 
 #define HEADER                   "<?xpacket begin='' id='W5M0MpCehiHzreSzNTczkc9d'?><x:xmpmeta xmlns:x='adobe:ns:meta/' x:xmptk='XMP toolkit 2.9.1-13, framework 1.6'><rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:iX='http://ns.adobe.com/iX/1.0/'>"

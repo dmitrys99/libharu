@@ -21,6 +21,7 @@
 #include "hpdf_fontdef.h"
 #include "internal/hpdf_fontdef_internal.h"
 #include "internal/hpdf_mmgr_internal.h"
+#include "internal/hpdf_streams_internal.h"
 
 #define HPDF_TTF_MAX_MEM_SIZ    10000
 

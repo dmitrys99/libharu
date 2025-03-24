@@ -50,6 +50,7 @@ typedef enum _HPDF_WhenceMode {
     HPDF_SEEK_END
 } HPDF_WhenceMode;
 
+struct _HPDF_Stream_Rec;
 typedef struct _HPDF_Stream_Rec  *HPDF_Stream;
 
 typedef HPDF_STATUS
@@ -57,66 +58,37 @@ typedef HPDF_STATUS
                             const HPDF_BYTE  *ptr,
                             HPDF_UINT        siz);
 
-
 typedef HPDF_STATUS
 (*HPDF_Stream_Read_Func)  (HPDF_Stream  stream,
                            HPDF_BYTE    *ptr,
                            HPDF_UINT    *siz);
-
 
 typedef HPDF_STATUS
 (*HPDF_Stream_Seek_Func)  (HPDF_Stream      stream,
                            HPDF_INT         pos,
                            HPDF_WhenceMode  mode);
 
-
 typedef HPDF_INT32
 (*HPDF_Stream_Tell_Func)  (HPDF_Stream      stream);
-
 
 typedef void
 (*HPDF_Stream_Free_Func)  (HPDF_Stream  stream);
 
-
 typedef HPDF_UINT32
 (*HPDF_Stream_Size_Func)  (HPDF_Stream  stream);
 
-
+struct _HPDF_MemStreamAttr_Rec;
 typedef struct _HPDF_MemStreamAttr_Rec  *HPDF_MemStreamAttr;
 
-
-typedef struct _HPDF_MemStreamAttr_Rec {
-    HPDF_List  buf;
-    HPDF_UINT  buf_siz;
-    HPDF_UINT  w_pos;
-    HPDF_BYTE  *w_ptr;
-    HPDF_UINT  r_ptr_idx;
-    HPDF_UINT  r_pos;
-    HPDF_BYTE  *r_ptr;
-} HPDF_MemStreamAttr_Rec;
-
-
-typedef struct _HPDF_Stream_Rec {
-    HPDF_UINT32               sig_bytes;
-    HPDF_StreamType           type;
-    HPDF_MMgr                 mmgr;
-    HPDF_Error                error;
-    HPDF_UINT                 size;
-    HPDF_Stream_Write_Func    write_fn;
-    HPDF_Stream_Read_Func     read_fn;
-    HPDF_Stream_Seek_Func     seek_fn;
-    HPDF_Stream_Free_Func     free_fn;
-    HPDF_Stream_Tell_Func     tell_fn;
-    HPDF_Stream_Size_Func     size_fn;
-    void*                     attr;
-} HPDF_Stream_Rec;
-
-
+typedef HPDF_Stream_Write_Func HPDF_Stream_Write_Func;
+typedef HPDF_Stream_Seek_Func HPDF_Stream_Seek_Func;
+typedef HPDF_Stream_Tell_Func HPDF_Stream_Tell_Func;
+typedef HPDF_Stream_Size_Func HPDF_Stream_Size_Func;
+typedef HPDF_Stream_Read_Func HPDF_Stream_Read_Func;
 
 HPDF_Stream
 HPDF_MemStream_New  (HPDF_MMgr  mmgr,
                      HPDF_UINT  buf_siz);
-
 
 HPDF_BYTE*
 HPDF_MemStream_GetBufPtr  (HPDF_Stream  stream,

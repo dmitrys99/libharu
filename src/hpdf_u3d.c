@@ -20,6 +20,7 @@
 #include "hpdf_u3d.h"
 
 #include "internal/hpdf_doc_internal.h"
+#include "internal/hpdf_streams_internal.h"
 
 #include <string.h>
 
