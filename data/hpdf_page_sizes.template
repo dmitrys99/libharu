@@ -29,10 +29,7 @@ extern "C" {
 #endif
 
 /**
-<<<<<<< HEAD
   \ingroup page
-=======
->>>>>>> 8fd8e32 (Add predefined page size formats)
   \brief Data structure representing page size (width and height), in points.
 */
 typedef struct _HPDF_PageSizeValue {
@@ -74,9 +71,11 @@ typedef struct _HPDF_PageSizeValue {
 */
 typedef enum _HPDF_PageSizes {
     {%- for size in sizes %}
+    {%- if size.skip != "true" %}
     /// {{ size.origin }} "{{size.name}}" page size ({{size.x}}mm x {{size.y}}mm)
     HPDF_PAGE_SIZE_{{ size.id }}{% if loop.first %} = 0{% endif %},
     {%- if loop.nextitem is defined and not (loop.nextitem.origin == size.origin) %}{{"\n"}}{% endif -%}
+    {% endif -%}
     {% endfor %}
 
     /// Last page size enum value
@@ -84,32 +83,30 @@ typedef enum _HPDF_PageSizes {
 } HPDF_PageSizes;
 
 /**
-<<<<<<< HEAD
   \ingroup page
-=======
->>>>>>> 8fd8e32 (Add predefined page size formats)
   \brief Predefined page sizes (in points).
 */
 static const HPDF_PageSizeValue HPDF_PREDEFINED_PAGE_SIZES[] = {
     {%- for size in sizes %}
+    {%- if size.skip != "true" %}
     {{ '{%9.3f, %8.3f}' | format(size.x*2.834646, size.y*2.834646)}} /* HPDF_PAGE_SIZE_{{ size.id }} */,
     {%- if loop.nextitem is defined and not (loop.nextitem.origin == size.origin) %}{{"\n"}}{% endif -%}
+    {% endif -%}
     {% endfor %}
 
     {    0.000,    0.000} /* HPDF_PAGE_SIZE_EOF */
 };
 
 /**
-<<<<<<< HEAD
   \ingroup page
-=======
->>>>>>> 8fd8e32 (Add predefined page size formats)
   \brief Predefined page size names.
 */
 static const char * const HPDF_PREDEFINED_PAGE_SIZE_NAMES[] = {
     {%- for size in sizes %}
+    {%- if size.skip != "true" %}
     "{{ size.origin }} '{{size.name}}' page size ({{size.x}}mm x {{size.y}}mm)",
     {%- if loop.nextitem is defined and not (loop.nextitem.origin == size.origin) %}{{"\n"}}{% endif -%}
+    {% endif -%}
     {% endfor %}
 
     "Unknown"

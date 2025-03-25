@@ -234,12 +234,10 @@
         {"name": "12 Sheet",                 "id": "BILLBOARD_12_SHEET",                 "origin": "Billboard",                 "x":  3048.0, "y":  1524.0},
         {"name": "16 Sheet",                 "id": "BILLBOARD_16_SHEET",                 "origin": "Billboard",                 "x":  2032.0, "y":  3048.0},
         {"name": "32 Sheet",                 "id": "BILLBOARD_32_SHEET",                 "origin": "Billboard",                 "x":  4064.0, "y":  3048.0},
-<<<<<<< HEAD
-=======
-        {"name": "48 Sheet",                 "id": "BILLBOARD_48_SHEET",                 "origin": "Billboard",                 "x":  6096.0, "y":  3048.0},
-        {"name": "64 Sheet",                 "id": "BILLBOARD_64_SHEET",                 "origin": "Billboard",                 "x":  8128.0, "y":  3048.0},
-        {"name": "96 Sheet",                 "id": "BILLBOARD_96_SHEET",                 "origin": "Billboard",                 "x": 12192.0, "y":  3048.0},
->>>>>>> 8fd8e32 (Add predefined page size formats)
+
+        {"name": "48 Sheet",                 "id": "BILLBOARD_48_SHEET",                 "origin": "Billboard",                 "x":  6096.0, "y":  3048.0, "skip": "true"},
+        {"name": "64 Sheet",                 "id": "BILLBOARD_64_SHEET",                 "origin": "Billboard",                 "x":  8128.0, "y":  3048.0, "skip": "true"},
+        {"name": "96 Sheet",                 "id": "BILLBOARD_96_SHEET",                 "origin": "Billboard",                 "x": 12192.0, "y":  3048.0, "skip": "true"},
 
         {"name": "JB0",                      "id": "JAPANESE_JB0",                       "origin": "Japanese JIS",              "x":  1030.0, "y":  1456.0},
         {"name": "JB1",                      "id": "JAPANESE_JB1",                       "origin": "Japanese JIS",              "x":   728.0, "y":  1030.0},

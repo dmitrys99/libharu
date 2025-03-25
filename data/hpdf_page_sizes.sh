@@ -9,5 +9,7 @@
 
 J=~/.local/bin/jinja2
 RES=../include/hpdf_page_sizes.h
+RES216=../include/hpdf_page_sizes_iso_216.h
 
 cat hpdf_page_sizes.json | $J hpdf_page_sizes.template > $RES
+cat hpdf_page_sizes_iso_216.json | $J hpdf_page_sizes.template > $RES216

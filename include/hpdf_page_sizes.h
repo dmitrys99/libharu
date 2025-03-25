@@ -522,7 +522,6 @@ typedef enum _HPDF_PageSizes {
     HPDF_PAGE_SIZE_BILLBOARD_16_SHEET,
     /// Billboard "32 Sheet" page size (4064.0mm x 3048.0mm)
     HPDF_PAGE_SIZE_BILLBOARD_32_SHEET,
-
     /// Japanese JIS "JB0" page size (1030.0mm x 1456.0mm)
     HPDF_PAGE_SIZE_JAPANESE_JB0,
     /// Japanese JIS "JB1" page size (728.0mm x 1030.0mm)
@@ -1152,7 +1151,6 @@ static const HPDF_PageSizeValue HPDF_PREDEFINED_PAGE_SIZES[] = {
     { 8640.001, 4320.001} /* HPDF_PAGE_SIZE_BILLBOARD_12_SHEET */,
     { 5760.001, 8640.001} /* HPDF_PAGE_SIZE_BILLBOARD_16_SHEET */,
     {11520.001, 8640.001} /* HPDF_PAGE_SIZE_BILLBOARD_32_SHEET */,
-
     { 2919.685, 4127.245} /* HPDF_PAGE_SIZE_JAPANESE_JB0 */,
     { 2063.622, 2919.685} /* HPDF_PAGE_SIZE_JAPANESE_JB1 */,
     { 1459.843, 2063.622} /* HPDF_PAGE_SIZE_JAPANESE_JB2 */,
@@ -1594,7 +1592,6 @@ static const char * const HPDF_PREDEFINED_PAGE_SIZE_NAMES[] = {
     "Billboard '12 Sheet' page size (3048.0mm x 1524.0mm)",
     "Billboard '16 Sheet' page size (2032.0mm x 3048.0mm)",
     "Billboard '32 Sheet' page size (4064.0mm x 3048.0mm)",
-
     "Japanese JIS 'JB0' page size (1030.0mm x 1456.0mm)",
     "Japanese JIS 'JB1' page size (728.0mm x 1030.0mm)",
     "Japanese JIS 'JB2' page size (515.0mm x 728.0mm)",
