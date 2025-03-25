@@ -17,11 +17,20 @@
 
 #include "hpdf_conf.h"
 #include "hpdf_utils.h"
+#include "hpdf_error.h"
+#include "hpdf_consts.h"
+#include "hpdf_objects.h"
+#include "hpdf_mmgr.h"
+#include "hpdf_encoder.h"
+#include "hpdf_list.h"
+
+#include "internal/hpdf_objects_internal.h"
 #include "internal/hpdf_fontdef_internal.h"
 #include "internal/hpdf_font_internal.h"
 #include "internal/hpdf_mmgr_internal.h"
 #include "internal/hpdf_encoder_internal.h"
 #include "internal/hpdf_list_internal.h"
+
 
 static HPDF_Font
 CIDFontType0_New (HPDF_Font parent,

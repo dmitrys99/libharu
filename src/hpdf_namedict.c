@@ -21,6 +21,8 @@
 #include "hpdf_info.h"
 #include "hpdf_namedict.h"
 #include "hpdf.h"
+
+#include "internal/hpdf_objects_internal.h"
 #include "internal/hpdf_error_internal.h"
 
 #ifndef HPDF_UNUSED

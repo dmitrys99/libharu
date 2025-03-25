@@ -21,6 +21,7 @@
 #include "hpdf.h"
 #include "hpdf_image.h"
 
+#include "internal/hpdf_objects_internal.h"
 #include "internal/hpdf_doc_internal.h"
 
 #ifdef LIBHPDF_HAVE_LIBPNG

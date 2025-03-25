@@ -19,6 +19,7 @@
 #include "hpdf.h"
 #include "hpdf_u3d.h"
 
+#include "internal/hpdf_objects_internal.h"
 #include "internal/hpdf_doc_internal.h"
 #include "internal/hpdf_streams_internal.h"
 #include "internal/hpdf_pages_internal.h"

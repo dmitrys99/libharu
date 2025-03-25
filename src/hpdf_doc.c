@@ -28,6 +28,7 @@
 #include "hpdf_utils.h"
 #include "hpdf_version.h"
 
+#include "internal/hpdf_objects_internal.h"
 #include "internal/hpdf_doc_internal.h"
 #include "internal/hpdf_fontdef_internal.h"
 #include "internal/hpdf_mmgr_internal.h"

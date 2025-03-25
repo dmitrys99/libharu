@@ -21,6 +21,7 @@
 #include "hpdf_3dmeasure.h"
 #include "hpdf.h"
 
+#include "internal/hpdf_objects_internal.h"
 #include "internal/hpdf_pages_internal.h"
 
 /*----------------------------------------------------------------------------*/

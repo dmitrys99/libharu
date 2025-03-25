@@ -20,6 +20,7 @@
 #include "hpdf.h"
 #include "hpdf_destination.h"
 
+#include "internal/hpdf_objects_internal.h"
 #include "internal/hpdf_doc_internal.h"
 #include "internal/hpdf_pages_internal.h"
 #include "internal/hpdf_list_internal.h"

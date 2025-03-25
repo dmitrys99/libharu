@@ -26,6 +26,7 @@
 #include "hpdf_pdfa.h"
 #include "hpdf.h"
 
+#include "internal/hpdf_objects_internal.h"
 #include "internal/hpdf_doc_internal.h"
 #include "internal/hpdf_streams_internal.h"
 #include "internal/hpdf_list_internal.h"

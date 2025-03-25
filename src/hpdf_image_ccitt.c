@@ -21,6 +21,7 @@
 #include <memory.h>
 #include <assert.h>
 
+#include "internal/hpdf_objects_internal.h"
 #include "internal/hpdf_doc_internal.h"
 
 #include "t4.h"
