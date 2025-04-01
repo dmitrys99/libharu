@@ -41,6 +41,7 @@
 #include "hpdf_utils.h"
 #include "hpdf_encrypt.h"
 #include "internal/hpdf_list_internal.h"
+#include "internal/hpdf_encrypt_internal.h"
 
 static const HPDF_BYTE HPDF_PADDING_STRING[] = {
     0x28, 0xBF, 0x4E, 0x5E, 0x4E, 0x75, 0x8A, 0x41,

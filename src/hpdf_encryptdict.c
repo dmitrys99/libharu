@@ -24,6 +24,7 @@
 
 #include "internal/hpdf_objects_internal.h"
 #include "internal/hpdf_list_internal.h"
+#include "internal/hpdf_encrypt_internal.h"
 
 #ifndef HPDF_UNUSED
 #define HPDF_UNUSED(a) ((void)(a))
