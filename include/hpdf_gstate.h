@@ -24,7 +24,6 @@
 extern "C" {
 #endif
 
-
 /*----------------------------------------------------------------------------*/
 /*------ graphic state stack -------------------------------------------------*/
 
@@ -35,13 +34,16 @@ typedef struct _HPDF_GState_Rec  *HPDF_GState;
 /*----------------------------------------------------------------------------*/
 
 HPDF_GState
-HPDF_GState_New  (HPDF_MMgr    mmgr,
-                  HPDF_GState  current);
-
+HPDF_GState_New(
+    HPDF_MMgr   mmgr,
+    HPDF_GState current
+);
 
 HPDF_GState
-HPDF_GState_Free  (HPDF_MMgr    mmgr,
-                   HPDF_GState  gstate);
+HPDF_GState_Free(
+    HPDF_MMgr   mmgr,
+    HPDF_GState gstate
+);
 
 #ifdef __cplusplus
 }

@@ -26,50 +26,60 @@ extern "C" {
 #endif
 
 struct _HPDF_List_Rec;
-typedef struct _HPDF_List_Rec  *HPDF_List;
+typedef struct _HPDF_List_Rec *HPDF_List;
 
 HPDF_List
-HPDF_List_New  (HPDF_MMgr  mmgr,
-                HPDF_UINT  items_per_block);
-
+HPDF_List_New(
+    HPDF_MMgr mmgr,
+    HPDF_UINT items_per_block
+);
 
 void
-HPDF_List_Free  (HPDF_List  list);
-
-
-HPDF_STATUS
-HPDF_List_Add  (HPDF_List  list,
-                void       *item);
-
+HPDF_List_Free(
+    HPDF_List list
+);
 
 HPDF_STATUS
-HPDF_List_Insert  (HPDF_List  list,
-                   void       *target,
-                   void       *item);
-
+HPDF_List_Add(
+    HPDF_List  list,
+    void      *item
+);
 
 HPDF_STATUS
-HPDF_List_Remove  (HPDF_List  list,
-                   void       *item);
+HPDF_List_Insert(
+    HPDF_List  list,
+    void      *target,
+    void      *item
+);
 
+HPDF_STATUS
+HPDF_List_Remove(
+    HPDF_List  list,
+    void      *item
+);
 
 void*
-HPDF_List_RemoveByIndex  (HPDF_List  list,
-                          HPDF_UINT  index);
-
+HPDF_List_RemoveByIndex(
+    HPDF_List list,
+    HPDF_UINT index
+);
 
 void*
-HPDF_List_ItemAt  (HPDF_List  list,
-                   HPDF_UINT  index);
-
+HPDF_List_ItemAt(
+    HPDF_List list,
+    HPDF_UINT index
+);
 
 HPDF_INT32
-HPDF_List_Find  (HPDF_List  list,
-                 void       *item);
-
+HPDF_List_Find(
+    HPDF_List  list,
+    void      *item
+);
 
 void
-HPDF_List_Clear  (HPDF_List  list);
+HPDF_List_Clear(
+    HPDF_List list
+);
 
 #ifdef __cplusplus
 }

@@ -24,7 +24,6 @@
 extern "C" {
 #endif
 
-
 /*----------------------------------------------------------------------------*/
 /*----- Writing Mode ---------------------------------------------------------*/
 
@@ -34,30 +33,36 @@ struct _HPDF_FontAttr_Rec;
 typedef struct _HPDF_FontAttr_Rec  *HPDF_FontAttr;
 
 HPDF_Font
-HPDF_Type1Font_New  (HPDF_MMgr        mmgr,
-                     HPDF_FontDef     fontdef,
-                     HPDF_Encoder     encoder,
-                     HPDF_Xref        xref);
+HPDF_Type1Font_New(
+    HPDF_MMgr    mmgr,
+    HPDF_FontDef fontdef,
+    HPDF_Encoder encoder,
+    HPDF_Xref    xref
+);
 
 HPDF_Font
-HPDF_TTFont_New  (HPDF_MMgr        mmgr,
-                  HPDF_FontDef     fontdef,
-                  HPDF_Encoder     encoder,
-                  HPDF_Xref        xref);
+HPDF_TTFont_New(
+    HPDF_MMgr    mmgr,
+    HPDF_FontDef fontdef,
+    HPDF_Encoder encoder,
+    HPDF_Xref    xref
+);
 
 HPDF_Font
-HPDF_Type0Font_New  (HPDF_MMgr        mmgr,
-                     HPDF_FontDef     fontdef,
-                     HPDF_Encoder     encoder,
-                     HPDF_Xref        xref);
-
+HPDF_Type0Font_New(
+    HPDF_MMgr    mmgr,
+    HPDF_FontDef fontdef,
+    HPDF_Encoder encoder,
+    HPDF_Xref    xref
+);
 
 HPDF_BOOL
-HPDF_Font_Validate  (HPDF_Font font);
+HPDF_Font_Validate(
+    HPDF_Font font
+);
 
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
 
 #endif /* _HPDF_FONT_H */
-

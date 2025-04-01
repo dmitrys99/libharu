@@ -28,13 +28,17 @@ extern "C" {
 /*----- HPDF_Destination -----------------------------------------------------*/
 
 HPDF_Destination
-HPDF_Destination_New  (HPDF_MMgr   mmgr,
-                       HPDF_Page   target,
-                       HPDF_Xref   xref);
-
+HPDF_Destination_New(
+    HPDF_MMgr mgr,
+    HPDF_Page target,
+    HPDF_Xref xref
+);
 
 HPDF_BOOL
-HPDF_Destination_Validate (HPDF_Destination  dst);
+HPDF_Destination_Validate(
+    HPDF_Destination dst
+);
+
 /**
 
   \ingroup link
@@ -54,11 +58,12 @@ HPDF_Destination_Validate (HPDF_Destination  dst);
 
 */
 HPDF_EXPORT(HPDF_STATUS)
-HPDF_Destination_SetXYZ  (HPDF_Destination  dst,
-                          HPDF_REAL         left,
-                          HPDF_REAL         top,
-                          HPDF_REAL         zoom);
-
+HPDF_Destination_SetXYZ(
+    HPDF_Destination dst,
+    HPDF_REAL        left,
+    HPDF_REAL        top,
+    HPDF_REAL        zoom
+);
 
 /**
 
@@ -75,8 +80,9 @@ HPDF_Destination_SetXYZ  (HPDF_Destination  dst,
 
 */
 HPDF_EXPORT(HPDF_STATUS)
-HPDF_Destination_SetFit  (HPDF_Destination  dst);
-
+HPDF_Destination_SetFit(
+    HPDF_Destination dst
+);
 
 /**
 
@@ -95,9 +101,10 @@ HPDF_Destination_SetFit  (HPDF_Destination  dst);
 
 */
 HPDF_EXPORT(HPDF_STATUS)
-HPDF_Destination_SetFitH  (HPDF_Destination  dst,
-                           HPDF_REAL         top);
-
+HPDF_Destination_SetFitH(
+    HPDF_Destination dst,
+    HPDF_REAL        top
+);
 
 /**
 
@@ -116,9 +123,10 @@ HPDF_Destination_SetFitH  (HPDF_Destination  dst,
 
 */
 HPDF_EXPORT(HPDF_STATUS)
-HPDF_Destination_SetFitV  (HPDF_Destination  dst,
-                           HPDF_REAL         left);
-
+HPDF_Destination_SetFitV(
+    HPDF_Destination dst,
+    HPDF_REAL        left
+);
 
 /**
 
@@ -140,12 +148,13 @@ HPDF_Destination_SetFitV  (HPDF_Destination  dst,
 
 */
 HPDF_EXPORT(HPDF_STATUS)
-HPDF_Destination_SetFitR  (HPDF_Destination  dst,
-                           HPDF_REAL         left,
-                           HPDF_REAL         bottom,
-                           HPDF_REAL         right,
-                           HPDF_REAL         top);
-
+HPDF_Destination_SetFitR(
+    HPDF_Destination dst,
+    HPDF_REAL        left,
+    HPDF_REAL        bottom,
+    HPDF_REAL        right,
+    HPDF_REAL        top
+);
 
 /**
 
@@ -162,7 +171,9 @@ HPDF_Destination_SetFitR  (HPDF_Destination  dst,
 
 */
 HPDF_EXPORT(HPDF_STATUS)
-HPDF_Destination_SetFitB  (HPDF_Destination  dst);
+HPDF_Destination_SetFitB(
+    HPDF_Destination dst
+);
 
 /**
 
@@ -181,9 +192,10 @@ HPDF_Destination_SetFitB  (HPDF_Destination  dst);
 
 */
 HPDF_EXPORT(HPDF_STATUS)
-HPDF_Destination_SetFitBH  (HPDF_Destination  dst,
-                            HPDF_REAL         top);
-
+HPDF_Destination_SetFitBH(
+    HPDF_Destination dst,
+    HPDF_REAL        top
+);
 
 /**
 
@@ -202,12 +214,13 @@ HPDF_Destination_SetFitBH  (HPDF_Destination  dst,
 
 */
 HPDF_EXPORT(HPDF_STATUS)
-HPDF_Destination_SetFitBV  (HPDF_Destination  dst,
-                            HPDF_REAL         left);
+HPDF_Destination_SetFitBV(
+    HPDF_Destination dst,
+    HPDF_REAL        left
+);
 
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
 
 #endif /* _HPDF_DESTINATION_H */
-

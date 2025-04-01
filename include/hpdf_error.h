@@ -197,32 +197,39 @@ typedef struct _HPDF_Error_Rec *HPDF_Error;
  *
  */
 void
-HPDF_Error_Init  (HPDF_Error    error,
-                  void         *user_data);
-
+HPDF_Error_Init(
+    HPDF_Error error,
+    void*      user_data
+);
 
 void
-HPDF_Error_Reset  (HPDF_Error  error);
-
-
-HPDF_STATUS
-HPDF_Error_GetCode  (HPDF_Error  error);
-
+HPDF_Error_Reset(
+    HPDF_Error error
+);
 
 HPDF_STATUS
-HPDF_Error_GetDetailCode  (HPDF_Error  error);
-
-
-HPDF_STATUS
-HPDF_SetError  (HPDF_Error   error,
-                HPDF_STATUS  error_no,
-                HPDF_STATUS  detail_no);
-
+HPDF_Error_GetCode(
+    HPDF_Error error
+);
 
 HPDF_STATUS
-HPDF_RaiseError  (HPDF_Error   error,
-                  HPDF_STATUS  error_no,
-                  HPDF_STATUS  detail_no);
+HPDF_Error_GetDetailCode(
+    HPDF_Error error
+);
+
+HPDF_STATUS
+HPDF_SetError(
+    HPDF_Error  error,
+    HPDF_STATUS error_no,
+    HPDF_STATUS detail_no
+);
+
+HPDF_STATUS
+HPDF_RaiseError(
+    HPDF_Error  error,
+    HPDF_STATUS error_no,
+    HPDF_STATUS detail_no
+);
 
 #ifdef __cplusplus
 }

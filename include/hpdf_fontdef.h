@@ -24,7 +24,6 @@
 extern "C" {
 #endif
 
-
 #define HPDF_FONTDEF_SIG_BYTES 0x464F4E54L
 
 /*------ collection of flags for defining characteristics. ---*/
@@ -54,100 +53,136 @@ extern "C" {
 
 /*-- HPDF_FontDef ---------------------------------------*/
 
-
 /*----------------------------------------------------------------------------*/
 /*----- HPDF_FontDef ---------------------------------------------------------*/
 
 struct _HPDF_FontDef_Rec;
-typedef struct _HPDF_FontDef_Rec  *HPDF_FontDef;
+typedef struct _HPDF_FontDef_Rec *HPDF_FontDef;
 
 struct _HPDF_CharData;
 typedef struct _HPDF_CharData HPDF_CharData;
 
 void
-HPDF_FontDef_Free  (HPDF_FontDef  fontdef);
+HPDF_FontDef_Free(
+    HPDF_FontDef fontdef
+);
 
 void
-HPDF_FontDef_Cleanup  (HPDF_FontDef  fontdef);
+HPDF_FontDef_Cleanup(
+    HPDF_FontDef fontdef
+);
 
 HPDF_BOOL
-HPDF_FontDef_Validate  (HPDF_FontDef  fontdef);
+HPDF_FontDef_Validate(
+    HPDF_FontDef fontdef
+);
 
 /*----------------------------------------------------------------------------*/
 /*----- HPDF_Type1FontDef  ---------------------------------------------------*/
 
 struct _HPDF_Type1FontDefAttrRec;
-typedef struct _HPDF_Type1FontDefAttrRec   *HPDF_Type1FontDefAttr;
+typedef struct _HPDF_Type1FontDefAttrRec *HPDF_Type1FontDefAttr;
 
 HPDF_FontDef
-HPDF_Type1FontDef_New  (HPDF_MMgr  mmgr);
+HPDF_Type1FontDef_New(
+    HPDF_MMgr mmgr
+);
 
 HPDF_FontDef
-HPDF_Type1FontDef_Load  (HPDF_MMgr         mmgr,
-                         HPDF_Stream       afm,
-                         HPDF_Stream       font_data);
+HPDF_Type1FontDef_Load(
+    HPDF_MMgr   mmgr,
+    HPDF_Stream afm,
+    HPDF_Stream font_data
+);
 
 HPDF_FontDef
-HPDF_Type1FontDef_Duplicate  (HPDF_MMgr     mmgr,
-                              HPDF_FontDef  src);
+HPDF_Type1FontDef_Duplicate(
+    HPDF_MMgr    mmgr,
+    HPDF_FontDef src
+);
 
 HPDF_STATUS
-HPDF_Type1FontDef_SetWidths  (HPDF_FontDef         fontdef,
-                              const HPDF_CharData  *widths);
+HPDF_Type1FontDef_SetWidths(
+    HPDF_FontDef         fontdef,
+    const HPDF_CharData *widths
+);
 
 HPDF_INT16
-HPDF_Type1FontDef_GetWidthByName  (HPDF_FontDef     fontdef,
-                                   const char  *gryph_name);
+HPDF_Type1FontDef_GetWidthByName(
+    HPDF_FontDef fontdef,
+    const char*  gryph_name
+);
 
 HPDF_INT16
-HPDF_Type1FontDef_GetWidth  (HPDF_FontDef  fontdef,
-                             HPDF_UNICODE  unicode);
+HPDF_Type1FontDef_GetWidth(
+    HPDF_FontDef fontdef,
+    HPDF_UNICODE unicode
+);
 
 HPDF_FontDef
-HPDF_Base14FontDef_New  (HPDF_MMgr        mmgr,
-                         const char  *font_name);
+HPDF_Base14FontDef_New(
+    HPDF_MMgr   mmgr,
+    const char* font_name
+);
 
 struct _HPDF_TTFontDefAttr_Rec;
 typedef struct _HPDF_TTFontDefAttr_Rec   *HPDF_TTFontDefAttr;
 
 HPDF_FontDef
-HPDF_TTFontDef_New (HPDF_MMgr   mmgr);
-
-
-HPDF_FontDef
-HPDF_TTFontDef_Load  (HPDF_MMgr     mmgr,
-                      HPDF_Stream   stream,
-                      HPDF_BOOL     embedding);
+HPDF_TTFontDef_New(
+    HPDF_MMgr mmgr
+);
 
 HPDF_FontDef
-HPDF_TTFontDef_Load2  (HPDF_MMgr     mmgr,
-                       HPDF_Stream   stream,
-                       HPDF_UINT     index,
-                       HPDF_BOOL     embedding);
+HPDF_TTFontDef_Load(
+    HPDF_MMgr   mmgr,
+    HPDF_Stream stream,
+    HPDF_BOOL   embedding
+);
+
+HPDF_FontDef
+HPDF_TTFontDef_Load2(
+    HPDF_MMgr   mmgr,
+    HPDF_Stream stream,
+    HPDF_UINT   index,
+    HPDF_BOOL   embedding
+);
 
 HPDF_UINT16
-HPDF_TTFontDef_GetGlyphid  (HPDF_FontDef   fontdef,
-                            HPDF_UINT16    unicode);
+HPDF_TTFontDef_GetGlyphid(
+    HPDF_FontDef fontdef,
+    HPDF_UINT16  unicode
+);
 
 HPDF_INT16
-HPDF_TTFontDef_GetCharWidth  (HPDF_FontDef   fontdef,
-                              HPDF_UINT16    unicode);
+HPDF_TTFontDef_GetCharWidth(
+    HPDF_FontDef fontdef,
+    HPDF_UINT16  unicode
+);
 
 HPDF_INT16
-HPDF_TTFontDef_GetGidWidth  (HPDF_FontDef   fontdef,
-                             HPDF_UINT16    gid);
+HPDF_TTFontDef_GetGidWidth(
+    HPDF_FontDef fontdef,
+    HPDF_UINT16  gid
+);
 
 HPDF_STATUS
-HPDF_TTFontDef_SaveFontData  (HPDF_FontDef   fontdef,
-                              HPDF_Stream    stream);
+HPDF_TTFontDef_SaveFontData(
+    HPDF_FontDef fontdef,
+    HPDF_Stream  stream
+);
 
 HPDF_Box
-HPDF_TTFontDef_GetCharBBox  (HPDF_FontDef   fontdef,
-                             HPDF_UINT16    unicode);
+HPDF_TTFontDef_GetCharBBox(
+    HPDF_FontDef fontdef,
+    HPDF_UINT16  unicode
+);
 
 void
-HPDF_TTFontDef_SetTagName  (HPDF_FontDef   fontdef,
-                            char     *tag);
+HPDF_TTFontDef_SetTagName(
+    HPDF_FontDef fontdef,
+    char*        tag
+);
 
 /*----------------------------------------------------------------------------*/
 /*----- HPDF_CIDFontDef  -----------------------------------------------------*/
@@ -161,22 +196,30 @@ struct _HPDF_CID_Width;
 typedef struct _HPDF_CID_Width HPDF_CID_Width;
 
 HPDF_FontDef
-HPDF_CIDFontDef_New  (HPDF_MMgr               mmgr,
-                      char              *name,
-                      HPDF_FontDef_InitFunc   init_fn);
+HPDF_CIDFontDef_New(
+    HPDF_MMgr             mmgr,
+    char*                 name,
+    HPDF_FontDef_InitFunc init_fn
+);
 
 HPDF_STATUS
-HPDF_CIDFontDef_AddWidth  (HPDF_FontDef            fontdef,
-                           const HPDF_CID_Width   *widths);
+HPDF_CIDFontDef_AddWidth(
+    HPDF_FontDef          fontdef,
+    const HPDF_CID_Width* widths
+);
 
 HPDF_INT16
-HPDF_CIDFontDef_GetCIDWidth  (HPDF_FontDef  fontdef,
-                              HPDF_UINT16   cid);
+HPDF_CIDFontDef_GetCIDWidth(
+    HPDF_FontDef fontdef,
+    HPDF_UINT16  cid
+);
 
 HPDF_STATUS
-HPDF_CIDFontDef_ChangeStyle   (HPDF_FontDef    fontdef,
-                               HPDF_BOOL       bold,
-                               HPDF_BOOL       italic);
+HPDF_CIDFontDef_ChangeStyle(
+    HPDF_FontDef fontdef,
+    HPDF_BOOL    bold,
+    HPDF_BOOL    italic
+);
 
 #ifdef __cplusplus
 }
