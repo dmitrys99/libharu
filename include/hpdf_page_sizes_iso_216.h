@@ -46,26 +46,6 @@ typedef struct _HPDF_PageSizeValue {
 
   Known page sizes include:
   - International
-  - US
-  - US envelope
-  - International envelope
-  - Photography
-  - Newspapers
-  - Books
-  - Business card
-  - Raw
-  - Billboard
-  - Russian
-  - French
-  - Japanese
-  - Canadian
-  - German
-  - Swedish
-  - Colombian
-  - Chinese
-  - Traditional British
-  - Imperial
-  - Transitional
 
   Sizes are given in millimeters and converted to points.
 */
